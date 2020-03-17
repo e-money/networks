@@ -51,8 +51,8 @@
         "address": "emoney1gzp549tt97nrmyc0c7035c944m0nuh26fjxge4",
         "coins": [
           {
-            "_comment": "10M NGM minus testnet rewards",
-            "amount": "9989000000000",
+            "_comment": "10M NGM with deductions for testnet rewards and grants",
+            "amount": "9749000000000",
             "denom": "ungm"
           }
         ],
@@ -66,12 +66,857 @@
         "start_time": "0"
       },
       {
-        "_comment": "validator.network",
         "account_number": "0",
-        "address": "emoney1fj76mrfpcwm7yqlmfqkqlx9kgvjns97c5f0403",
+        "address": "emoney1sxx9mszve0gaedz5ld7qdkjkfv8z992avdth5f",
         "coins": [
           {
             "amount": "11000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1ptyzewnns2kn37ewtmv6ppsvhdnmeapvp7kyl6",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney10nc3y5xp93txarcxcqdrsvh9ta297v7xkzs4yy",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney18ka80t4g455lrueg8mk64jk47fscatm72zt4gj",
+        "coins": [
+          {
+            "amount": "6000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1s3x3wy58ssrjf7097406alryeejfamhrtgd0q5",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1waqn2psrhs4vz5gz9p77hv9cxw3xcccffyph02",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1d6q0xxdugldf85xhkjtw4q7tc5v46ff3ytezyu",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1tmu0fayvksthpt4qety8dn55lc8pg4sphyapz5",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1sz7rp920hgupfl0p6c7kwkaes8q8tx3luz3va4",
+        "coins": [
+          {
+            "amount": "6000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1ygm45zwa7y6smay587rws60wptuauycmc0gf8r",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1tw0qj9nuqx8nhn9d0zup64navtc0c4hdh9kxst",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1q2kc675fw536jq74f6ekwae2pr5pksue22sn3a",
+        "coins": [
+          {
+            "amount": "6000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1cv4leeaavx5lu5n7jgrdklt76rgx2xtdw5df95",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1hwvlth79tkzsk2vqnt7vkcncajtgzhm3wex6e3",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney159uhuzucvmtftdappd4smuks4v7s0dpmcednm2",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1j40h49qch2kcx28pc892hmyl930skzzxlw75ax",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1eq55wawvpv044z68tm456mdh8jgvlt32kftlzc",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1cu84axdsggf2w3s4pgfg406p0ex9hp682gehrz",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1wtv0kp6ydt03edd8kyr5arr4f3yc52vpmty82j",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney17wcggpjx007uc09s8y4hwrj8f228mlweu9p4qf",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1293pqwtzu67zp8txuya4yts03ccw5kgfz83kmf",
+        "coins": [
+          {
+            "amount": "16000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1m5ymqqnem9tzdzul0xrpkw3d82kncyzdf7c76j",
+        "coins": [
+          {
+            "amount": "54000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1qjy6hpc65mp6yc7hf234y3sf0rtmumnt3dx44p",
+        "coins": [
+          {
+            "amount": "6000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1z89utvygweg5l56fsk8ak7t6hh88fd0amftwj4",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1q4k07zr7504f2tcdfpl4xmawlgq6yz4mzwhq7v",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1kgddca7qj96z0qcxr2c45z73cfl0c75p57l33h",
+        "coins": [
+          {
+            "amount": "6000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1lyy7q6lt5gyt43sxms4tt9smcnrqy2j0nxt3wf",
+        "coins": [
+          {
+            "amount": "2000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1qk3a2lpm5mskwnpsjm25qzs9urqhwclmuqkejs",
+        "coins": [
+          {
+            "amount": "6000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney17v5v5nwqs9677u92us0qdare549tj7gn7pv78d",
+        "coins": [
+          {
+            "amount": "2000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1zgv6tqess9q6y4cj28ldpjllrqlyzqqhq004k3",
+        "coins": [
+          {
+            "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1edxhamqghv5naa6gjtar5jgxg6ly2rt4qfhf4x",
+        "coins": [
+          {
+            "amount": "6000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1ualhu3fjgg77g485gmyswkq3w0dp7gysshv0cz",
+        "coins": [
+          {
+            "amount": "2000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1s34xgst5slleg22ey8gwnfd4yf977xrs3h5qej",
+        "coins": [
+          {
+            "amount": "6000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1x95keq9l9y9p7hjdt6xd8wnknrpnjsqrv80f3l",
+        "coins": [
+          {
+            "amount": "5000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1zygrkcsfhdznwquccwgzekrkqdth8f89w77cqn",
+        "coins": [
+          {
+            "amount": "5000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney164r0u2rdgglt77wjpzqf6w9k7y87lq469nhfgv",
+        "coins": [
+          {
+            "amount": "5000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1dzha28l2tlqu5kq7c86z0fgw30r6nqx5r88vm4",
+        "coins": [
+          {
+            "amount": "2500000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1lcsjy2d5s33h0sddd8lpuqvwyz5ruz7jl2gpx2",
+        "coins": [
+          {
+            "amount": "2500000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney17egx76z2rdcwxhqdrrzsnuhpjpftsjxj2wc2sm",
+        "coins": [
+          {
+            "amount": "2500000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1vzxkv3lxccnttr9rs0002s93sgw72h7gclvgqd",
+        "coins": [
+          {
+            "amount": "2500000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1hu693n3czjmrjzp47xanz5j8a450zdw3qew435",
+        "coins": [
+          {
+            "amount": "2500000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1sh2y6w950lasm0g4kyc77wus8xgsr475ldtqyt",
+        "coins": [
+          {
+            "amount": "2500000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney17e6l8jexcle3un9r8fjwg3jg8rthr95p65uz6j",
+        "coins": [
+          {
+            "amount": "2500000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney164z7wwzv84h4hwn6rvjjkns6j4ht43jv26tt9e",
+        "coins": [
+          {
+            "amount": "2500000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney19wlk8gkfjckqr8d73dyp4n0f0k89q4h7fqtge0",
+        "coins": [
+          {
+            "amount": "2500000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1ul5t6wu8cefygkscsy55hd3jw2e7spmq942wsp",
+        "coins": [
+          {
+            "amount": "2500000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1fm24xtekwuql5ezp926380adshsx5arkzhqnyz",
+        "coins": [
+          {
+            "amount": "2500000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1zca529sff7x4sm2t06x4a5stl7ug0xqx04gung",
+        "coins": [
+          {
+            "amount": "2500000000",
             "denom": "ungm"
           }
         ],
@@ -98,12 +943,12 @@
       "key": "emoney16j4trwyg8a3pfwqu2ely96tkzl05eh4vvyyfts",
       "restricted_denoms": [
         {
-          "Denom": "ungm",
           "Allowed": [
             "emoney1j7sq6dadld46vruk92r0se0tv0f3uc4pvl4ntd",
             "emoney1mxj9pml6lc6tcxsvph39ra4us8nafglrfa0c3r",
             "emoney1gzp549tt97nrmyc0c7035c944m0nuh26fjxge4"
-          ]
+          ],
+          "Denom": "ungm"
         }
       ]
     },
