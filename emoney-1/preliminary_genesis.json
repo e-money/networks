@@ -52,7 +52,7 @@
         "coins": [
           {
             "_comment": "10M NGM with deductions for testnet rewards and grants",
-            "amount": "9743000000000",
+            "amount": "9740500000000",
             "denom": "ungm"
           }
         ],
@@ -953,6 +953,24 @@
         "coins": [
           {
             "amount": "4000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney19gz4p5hf3u5fkj0gm6h2xmh29ulv6ejdpkv7cj",
+        "coins": [
+          {
+            "amount": "2500000000",
             "denom": "ungm"
           }
         ],
