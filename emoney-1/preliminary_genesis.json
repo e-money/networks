@@ -1009,7 +1009,53 @@
       "withdraw_addr_enabled": true
     },
     "genutil": {
-      "gentxs": []
+      "gentxs": [
+        {
+          "type": "cosmos-sdk/StdTx",
+          "value": {
+            "fee": {
+              "amount": [],
+              "gas": "200000"
+            },
+            "memo": "",
+            "msg": [
+              {
+                "type": "cosmos-sdk/MsgCreateValidator",
+                "value": {
+                  "commission": {
+                    "max_change_rate": "1.000000000000000000",
+                    "max_rate": "1.000000000000000000",
+                    "rate": "0.100000000000000000"
+                  },
+                  "delegator_address": "emoney1sxx9mszve0gaedz5ld7qdkjkfv8z992avdth5f",
+                  "description": {
+                    "details": "Highly resilient and secure validator operating out of Northern Europe. See website for terms of service.",
+                    "identity": "357F80896B3311B4",
+                    "moniker": "validator.network",
+                    "website": "https://validator.network"
+                  },
+                  "min_self_delegation": "1000000",
+                  "pubkey": "emoneyvalconspub1zcjduepquawmxscpkltzrggsqgenxp8uvf0fjxm0fqvvdze3rg4dqc3a6laqc7cggf",
+                  "validator_address": "emoneyvaloper1sxx9mszve0gaedz5ld7qdkjkfv8z992atddr2y",
+                  "value": {
+                    "amount": "10000000000",
+                    "denom": "ungm"
+                  }
+                }
+              }
+            ],
+            "signatures": [
+              {
+                "pub_key": {
+                  "type": "tendermint/PubKeySecp256k1",
+                  "value": "A874FW2YoONx6zbQemNXwaJSqtQ6Wb9BRg0HRLWvtp2o"
+                },
+                "signature": "YW7F2jp2UW1sL/QfqzUp2GX9ULFm8X5+yNc0BijF23RIVQv8FMptc3wbT6cr/l71awV0HZ6NOWEkhROlKxRNxg=="
+              }
+            ]
+          }
+        }
+      ]
     },
     "inflation": {
       "assets": {

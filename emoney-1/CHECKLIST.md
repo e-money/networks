@@ -13,4 +13,4 @@
 * [ ] Update vesting times
 * [ ] Final comb-through of parameters
 * [ ] Verify `emcli query supply total` output
-* [ ] validator.network gentx
+* [x] validator.network gentx
