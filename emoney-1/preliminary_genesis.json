@@ -52,7 +52,7 @@
         "coins": [
           {
             "_comment": "10M NGM with deductions for testnet rewards and grants",
-            "amount": "9740500000000",
+            "amount": "9716500000000",
             "denom": "ungm"
           }
         ],
@@ -971,6 +971,60 @@
         "coins": [
           {
             "amount": "2500000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1ghkm2jpjvlms2jp8ttl3ucxvyfjnm0szgvvz85",
+        "coins": [
+          {
+            "amount": "20000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney189e8s3ng6qeug5gknqvr5m86y8xc0d24exg65t",
+        "coins": [
+          {
+            "amount": "2000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "account_number": "0",
+        "address": "emoney1z4nc3htz887eemfqmta5a5q8g2glf9qsrrpedu",
+        "coins": [
+          {
+            "amount": "2000000000",
             "denom": "ungm"
           }
         ],
