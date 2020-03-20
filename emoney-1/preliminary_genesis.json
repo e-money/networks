@@ -5,7 +5,7 @@
       {
         "_comment": "e-Money A/S",
         "account_number": "0",
-        "address": "emoney1j7sq6dadld46vruk92r0se0tv0f3uc4pvl4ntd",
+        "address": "emoney1cs4323dyzu0wxfj4vc62m8q3xsczfavqx9x3zd",
         "coins": [
           {
             "amount": "65000000000000",
@@ -29,7 +29,7 @@
       {
         "_comment": "Community Sale",
         "account_number": "0",
-        "address": "emoney1mxj9pml6lc6tcxsvph39ra4us8nafglrfa0c3r",
+        "address": "emoney147verqcxwdkgrn663x2qj66zyqc5mu479afw9n",
         "coins": [
           {
             "amount": "25000000000000",
@@ -48,7 +48,7 @@
       {
         "_comment": "Ecosystem Fund",
         "account_number": "0",
-        "address": "emoney1gzp549tt97nrmyc0c7035c944m0nuh26fjxge4",
+        "address": "emoney14r5rva8qk5ee6rvk5sdtmxea40uf74k7uh4yjv",
         "coins": [
           {
             "_comment": "10M NGM with deductions for testnet rewards and grants",
@@ -1066,13 +1066,14 @@
       }
     },
     "authority": {
-      "key": "emoney16j4trwyg8a3pfwqu2ely96tkzl05eh4vvyyfts",
+      "key": "emoney1ygnj9y2pulvgpy6gs2252s2qgcyawurl6zhn7z",
       "restricted_denoms": [
         {
           "Allowed": [
-            "emoney1j7sq6dadld46vruk92r0se0tv0f3uc4pvl4ntd",
-            "emoney1mxj9pml6lc6tcxsvph39ra4us8nafglrfa0c3r",
-            "emoney1gzp549tt97nrmyc0c7035c944m0nuh26fjxge4"
+            "emoney1cs4323dyzu0wxfj4vc62m8q3xsczfavqx9x3zd",
+            "emoney147verqcxwdkgrn663x2qj66zyqc5mu479afw9n",
+            "emoney14r5rva8qk5ee6rvk5sdtmxea40uf74k7uh4yjv",
+            "emoney1s73cel9vxllx700eaeuqr70663w5f0twzcks3l"
           ],
           "Denom": "ungm"
         }
