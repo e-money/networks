@@ -52,7 +52,7 @@
         "coins": [
           {
             "_comment": "10M NGM with deductions for testnet rewards and grants",
-            "amount": "9712500000000",
+            "amount": "9707500000000",
             "denom": "ungm"
           }
         ],

@@ -12,5 +12,5 @@
 * [ ] Update genesis_time and inflation.last_applied
 * [ ] Update vesting times
 * [ ] Final comb-through of parameters
-* [ ] Verify `emcli query supply total` output
+* [x] Verify `emcli query supply total` output
 * [x] validator.network gentx
