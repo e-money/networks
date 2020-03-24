@@ -19,7 +19,9 @@ Explorer: https://e-money.network
 The following seed nodes can be configured to join the network:
 
 ```
-(to be announced)  
+# validator.network
+c3469b7fcf414f26bc1e86a9abe019053587422d@3.121.231.117:26656
+6d5300fd4262fd1730d7bb59670590d7f7a326c9@35.157.193.8:26656
 ```
 
 Validators are encouraged to create a PR and add their nodes above.
