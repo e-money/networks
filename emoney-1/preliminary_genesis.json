@@ -1151,7 +1151,7 @@
     "inflation": {
       "assets": {
         "assets": [],
-        "last_applied": "2020-03-16T12:00:00.000000Z",
+        "last_applied": "2020-03-25T12:00:00.000000Z",
         "last_applied_height": "0"
       }
     },
@@ -1209,5 +1209,5 @@
       ]
     }
   },
-  "genesis_time": "2020-03-16T12:00:00.000000Z"
+  "genesis_time": "2020-03-25T12:00:00.000000Z"
 }

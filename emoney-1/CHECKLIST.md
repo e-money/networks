@@ -9,7 +9,7 @@
 * [x] Validator rewards are incorporated
 * [x] Cool-drop gifts are incorporated
 * [x] Deduct rewards and gifts from ecosystem fund balance
-* [ ] Update genesis_time and inflation.last_applied
+* [x] Update genesis_time and inflation.last_applied
 * [ ] Update vesting times
 * [ ] Final comb-through of parameters
 * [x] Verify `emcli query supply total` output
