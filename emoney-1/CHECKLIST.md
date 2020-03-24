@@ -11,6 +11,6 @@
 * [x] Deduct rewards and gifts from ecosystem fund balance
 * [x] Update genesis_time and inflation.last_applied
 * [x] Update vesting times
-* [ ] Final comb-through of parameters
+* [x] Final comb-through of parameters
 * [x] Verify `emcli query supply total` output
 * [x] validator.network gentx

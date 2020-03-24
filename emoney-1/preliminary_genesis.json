@@ -1167,7 +1167,7 @@
       "missed_blocks": {},
       "params": {
         "downtime_jail_duration": "3600000000000",
-        "max_evidence_age": "120000000000",
+        "max_evidence_age": "1800000000000",
         "min_signed_per_window": "0.100000000000000000",
         "signed_blocks_window_duration": "3600000000000",
         "slash_fraction_double_sign": "0.050000000000000000",
