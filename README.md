@@ -29,6 +29,8 @@ c3469b7fcf414f26bc1e86a9abe019053587422d@3.121.231.117:26656
 ```
 # Forbole
 2ab74e1d5b3f24a6c00da75b215f3fb2c29db396@35.166.247.232:26656
+# 01node
+cff99678c6777825f20598556ad102ae4d6c6cd3@185.181.103.131:26656
 ```
 
 Validators are encouraged to create a PR and add their nodes above.
