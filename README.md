@@ -24,4 +24,11 @@ c3469b7fcf414f26bc1e86a9abe019053587422d@3.121.231.117:26656
 6d5300fd4262fd1730d7bb59670590d7f7a326c9@35.157.193.8:26656
 ```
 
+## Persistent Peers
+
+```
+# Forbole
+2ab74e1d5b3f24a6c00da75b215f3fb2c29db396@35.166.247.232:26656
+```
+
 Validators are encouraged to create a PR and add their nodes above.
