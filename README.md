@@ -37,6 +37,8 @@ ab46e93f949e3ae794360536cce001a7fe74ace1@116.202.196.217:46656
 5db6affdf27744cf2a7a0c0acbca9a1a59893bc4@116.202.196.147:46656
 # WeStaking
 7b84885ebe5bdf0a36289d87dd9b367223e9736f@165.22.167.234:21656
+# ATEAM
+226d713acb10a1cd09b3b890406b886d7b071cf2@54.151.46.53:26656
 ```
 
 Validators are encouraged to create a PR and add their nodes above.
