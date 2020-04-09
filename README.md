@@ -14,15 +14,6 @@ Software: [v0.6.1](https://github.com/e-money/em-ledger/releases/tag/v0.6.1)
 Token API: https://api.e-money.com/v1/tokens.json  
 Explorer: https://e-money.network  
 
-## Seed Nodes
-
-The following seed nodes can be configured to join the network:
-
-```
-# validator.network
-c3469b7fcf414f26bc1e86a9abe019053587422d@3.121.231.117:26656
-6d5300fd4262fd1730d7bb59670590d7f7a326c9@35.157.193.8:26656
-```
 
 ## Persistent Peers
 
