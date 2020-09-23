@@ -14,15 +14,20 @@ with open("emoney-1.export.json") as importfile:
     with open("seed-round.csv") as csvfile:
         csv_reader = csv.DictReader(csvfile)
         for row in csv_reader:
-            # TODO
-            print(row)
+            address = row["address"]
+            amount = int(row["amount"])
+            account = findAccount(address, genesis)
+            if account is None:
+                raise ValueError("seed account missing")
+            account["_comment"] = "Seed Round"
+            updateAccount(account, genesis)
 
     # Deliver tokens to private sale participants
-    with open("private-sale.csv") as csvfile:
-        csv_reader = csv.DictReader(csvfile)
-        for row in csv_reader:
-            # TODO
-            print(row)
+    # with open("private-sale.csv") as csvfile:
+    #     csv_reader = csv.DictReader(csvfile)
+    #     for row in csv_reader:
+    #         # TODO
+    #         print(row)
 
     # Adjust token distribution (Treasury, Ecosystem fund etc.)
     # TODO
@@ -32,7 +37,8 @@ with open("emoney-1.export.json") as importfile:
 
     # Create emoney-2 genesis file
     with open("emoney-2.genesis.json", "w", encoding="utf-8") as exportfile:
-        json.dump(genesis, exportfile, ensure_ascii=False, indent=4)
+        json.dump(genesis, exportfile, ensure_ascii=False,
+                  indent=4, sort_keys=True)
 
 
 # Open migrated Genesis
