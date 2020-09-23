@@ -15,12 +15,16 @@ with open("emoney-1.export.json") as importfile:
         csv_reader = csv.DictReader(csvfile)
         for row in csv_reader:
             address = row["address"]
-            amount = int(row["amount"])
+            # Original amount as ungm
+            original_amount = int(row["amount"]) * 1000000
+            # Adjusted amount which must now be vested
+            vesting_amount = int(
+                (original_amount * 2285000 / 387000)) - original_amount
             account = find_account(address, genesis)
             if account is None:
                 raise ValueError("seed account missing")
-            account["_comment"] = "Seed Round"
-            account = migrate_seed_account(account, "1585137600", "1679745600")
+            account = migrate_seed_account(
+                account, original_amount, vesting_amount, "1585137600", "1679745600")
             update_account(account, genesis)
 
     # Deliver tokens to private sale participants
