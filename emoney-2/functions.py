@@ -21,61 +21,66 @@ def update_account(account, genesis):
     raise Exception("account not found")
 
 
-def migrate_seed_account(account, original_amount, vesting_amount, vesting_start, vesting_end):
-    account["_comment"] = "Seed Round Migration: ungm " + str(original_amount)
+def get_vesting_amount(account):
+    if account["type"] != "cosmos-sdk/ContinuousVestingAccount":
+        raise ValueError("unsupported account type")
+    for coin in account["value"]["original_vesting"]:
+        if coin["denom"] == "ungm":
+            return int(coin["amount"])
+    return 0
+
+
+def next_account_number(genesis):
+    highest_number = 0
+    for account in genesis["app_state"]["auth"]["accounts"]:
+        highest_number = max(highest_number, int(
+            account["value"]["account_number"]))
+    return highest_number + 1
+
+
+def migrate_seed_round_account(account, original_amount, vesting_start, vesting_end):
+    # Adjusted amount which must now be vested
+    vesting_amount = int(
+        (original_amount * 2285000 / 387000)) - original_amount
+
+    account["_comment_1"] = "Seed Round Migration: ungm " + \
+        str(original_amount)
     account["type"] = "cosmos-sdk/ContinuousVestingAccount"
-    account["value"]["start_time"] = str(
-        int(time.mktime(vesting_start.timetuple())))
-    account["value"]["end_time"] = str(
-        int(time.mktime(vesting_end.timetuple())))
-    account["value"]["original_vesting"] = [
-        {"amount": str(vesting_amount), "denom": "ungm"}]
+
+    account["value"].update({
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "start_time": str(int(vesting_start.timestamp())),
+        "end_time": str(int(vesting_end.timestamp())),
+        "original_vesting": [
+            {"amount": str(vesting_amount), "denom": "ungm"}
+        ]})
     return account
 
 
-def nextAccountNumber(genesis):
-    accountNo = 0
-    for acc in genesis["app_state"]["auth"]["accounts"]:
-        accountNo = max(accountNo, int(acc["value"]["account_number"]))
+def update_private_sale_account(account, vesting_amount, vesting_start, vesting_end):
+    account["_comment_2"] = "Private Sale Delivery: ungm " + \
+        str(vesting_amount)
+    account["type"] = "cosmos-sdk/ContinuousVestingAccount"
 
-    return accountNo + 1
-
-def newVestingAccount(addr, balance, accNo, genesisTime, vestingAmount, vestingPeriod):
-    acc = newAccount(addr, balance, accNo)
-    acc["type"] = "cosmos-sdk/ContinuousVestingAccount"
-
-    start_time = int(genesisTime.timestamp())
-    end_time = int((genesisTime + vestingPeriod).timestamp())
-
-    acc["value"].update({
+    account["value"].update({
         "delegated_free": [],
-        "delegated_vesting": [
-            { "amount": str(vestingAmount * 1000000), "denom": "ungm" }
-        ],
-        "end_time": str(end_time),
+        "delegated_vesting": [],
+        "start_time": str(int(vesting_start.timestamp())),
+        "end_time": str(int(vesting_end.timestamp())),
         "original_vesting": [
-            { "amount": str(vestingAmount * 1000000), "denom": "ungm" }
-        ],
-        "public_key": None,
-        "sequence": "0",
-        "start_time": str(start_time)
-    })
-
-    return acc
+            {"amount": str(vesting_amount), "denom": "ungm"}
+        ]})
+    return account
 
 
-def newAccount(addr, balance, accNo):
+def new_account(address, account_number):
     return {
         "type": "cosmos-sdk/Account",
         "value": {
-            "account_number": str(accNo),
-            "address": addr,
-            "coins": [
-                {
-                    "amount": str(balance * 1000000),
-                    "denom": "ungm"
-                }
-            ],
+            "account_number": str(account_number),
+            "address": address,
+            "coins": [],
             "public_key": None,
             "sequence": "0"
         }

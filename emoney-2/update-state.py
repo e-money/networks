@@ -21,26 +21,35 @@ with open("emoney-1.export.json") as importfile:
             address = row["address"]
             # Original amount as ungm
             original_amount = int(row["amount"]) * 1000000
-            # Adjusted amount which must now be vested
-            vesting_amount = int(
-                (original_amount * 2285000 / 387000)) - original_amount
             account = find_account(address, genesis)
             if account is None:
                 raise ValueError("seed account missing")
-            account = migrate_seed_account(
-                account, original_amount, vesting_amount, genesis_time, genesis_time + datetime.timedelta(days=365))
+            account = migrate_seed_round_account(
+                account, original_amount, genesis_time, genesis_time + datetime.timedelta(days=365))
             update_account(account, genesis)
 
     # Deliver tokens to private sale participants
     with open("private-sale.csv") as csvfile:
         vesting_period = datetime.timedelta(days=365/2)
-        ngmBalance = int(row['amount'])
         csv_reader = csv.DictReader(csvfile)
         for row in csv_reader:
-            # TODO Check if account already exists.
-            acc = newVestingAccount(row['address'], ngmBalance, nextAccountNumber(genesis), genesis_time, ngmBalance, vesting_period)
-            acc["_comment"] = "private sale"
-            genesis["app_state"]["auth"]["accounts"].append(acc)
+            address = row["address"]
+            # Vesting amount as ungm
+            vesting_amount = int(row["amount"]) * 1000000
+            account = find_account(address, genesis)
+            if account is None:
+                # print("Created new account for " + address)
+                account = new_account(address, next_account_number(genesis))
+                genesis["app_state"]["auth"]["accounts"].append(account)
+            else:
+                print("Private sale account exists " + json.dumps(account))
+                # Consider existing vesting amount
+                vesting_amount = vesting_amount + get_vesting_amount(account)
+                # raise ValueError("private sale account already exist")
+            account = update_private_sale_account(
+                account, vesting_amount, genesis_time, genesis_time + datetime.timedelta(days=182, hours=12))
+            # print("Private sale done: " + json.dumps(account))
+            update_account(account, genesis)
 
     # Adjust token distribution (Treasury, Ecosystem fund etc.)
     # TODO
