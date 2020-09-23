@@ -29,3 +29,52 @@ def migrate_seed_account(account, original_amount, vesting_amount, vesting_start
     account["value"]["original_vesting"] = [
         {"amount": str(vesting_amount), "denom": "ungm"}]
     return account
+
+
+def nextAccountNumber(genesis):
+    accountNo = 0
+    for acc in genesis["app_state"]["auth"]["accounts"]:
+        accountNo = max(accountNo, int(acc["value"]["account_number"]))
+
+    return accountNo + 1
+
+def newVestingAccount(addr, balance, accNo, genesisTime, vestingAmount, vestingPeriod):
+    acc = newAccount(addr, balance, accNo)
+    acc["type"] = "cosmos-sdk/ContinuousVestingAccount"
+
+    start_time = int(genesisTime.timestamp())
+    end_time = int((genesisTime + vestingPeriod).timestamp())
+
+    acc["value"].update({
+        "delegated_free": [],
+        "delegated_vesting": [
+            { "amount": str(vestingAmount * 1000000), "denom": "ungm" }
+        ],
+        "end_time": str(end_time),
+        "original_vesting": [
+            { "amount": str(vestingAmount * 1000000), "denom": "ungm" }
+        ],
+        "public_key": None,
+        "sequence": "0",
+        "start_time": str(start_time)
+    })
+
+    return acc
+
+
+def newAccount(addr, balance, accNo):
+    return {
+        "type": "cosmos-sdk/Account",
+        "value": {
+            "account_number": str(accNo),
+            "address": addr,
+            "coins": [
+                {
+                    "amount": str(balance * 1000000),
+                    "denom": "ungm"
+                }
+            ],
+            "public_key": None,
+            "sequence": "0"
+        }
+    }

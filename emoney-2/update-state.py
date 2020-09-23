@@ -32,11 +32,15 @@ with open("emoney-1.export.json") as importfile:
             update_account(account, genesis)
 
     # Deliver tokens to private sale participants
-    # with open("private-sale.csv") as csvfile:
-    #     csv_reader = csv.DictReader(csvfile)
-    #     for row in csv_reader:
-    #         # TODO
-    #         print(row)
+    with open("private-sale.csv") as csvfile:
+        vesting_period = datetime.timedelta(days=365/2)
+        ngmBalance = int(row['amount'])
+        csv_reader = csv.DictReader(csvfile)
+        for row in csv_reader:
+            # TODO Check if account already exists.
+            acc = newVestingAccount(row['address'], ngmBalance, nextAccountNumber(genesis), genesis_time, ngmBalance, vesting_period)
+            acc["_comment"] = "private sale"
+            genesis["app_state"]["auth"]["accounts"].append(acc)
 
     # Adjust token distribution (Treasury, Ecosystem fund etc.)
     # TODO
