@@ -8,7 +8,7 @@ with open("emoney-1.export.json") as importfile:
     genesis = json.load(importfile)
 
     # Lift non-transferability restriction on NGM
-    removeRestrictedDenoms(genesis)
+    remove_restricted_denoms(genesis)
 
     # Change allocation for seed round participants and introduce vesting
     with open("seed-round.csv") as csvfile:
@@ -16,11 +16,12 @@ with open("emoney-1.export.json") as importfile:
         for row in csv_reader:
             address = row["address"]
             amount = int(row["amount"])
-            account = findAccount(address, genesis)
+            account = find_account(address, genesis)
             if account is None:
                 raise ValueError("seed account missing")
             account["_comment"] = "Seed Round"
-            updateAccount(account, genesis)
+            account = migrate_seed_account(account, "1585137600", "1679745600")
+            update_account(account, genesis)
 
     # Deliver tokens to private sale participants
     # with open("private-sale.csv") as csvfile:
@@ -37,8 +38,8 @@ with open("emoney-1.export.json") as importfile:
 
     # Create emoney-2 genesis file
     with open("emoney-2.genesis.json", "w", encoding="utf-8") as exportfile:
-        json.dump(genesis, exportfile, ensure_ascii=False,
-                  indent=4, sort_keys=True)
+        json.dump(genesis, exportfile,
+                  indent=2, sort_keys=True)
 
 
 # Open migrated Genesis
