@@ -1,11 +1,15 @@
 import json
 import csv
+import datetime
 from functions import *
 
+# TODO Currently genesis time of emoney-1 plus one year
+genesis_time = datetime.datetime(2021, 3, 25, 12, 0, 0, tzinfo=None)
 
 with open("emoney-1.export.json") as importfile:
     # Load emoney-1 export file
     genesis = json.load(importfile)
+    genesis["genesis_time"] = genesis_time.isoformat() + "Z"
 
     # Lift non-transferability restriction on NGM
     remove_restricted_denoms(genesis)
