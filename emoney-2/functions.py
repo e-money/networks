@@ -1,4 +1,5 @@
 import json
+import time
 
 
 def remove_restricted_denoms(genesis):
@@ -20,11 +21,11 @@ def update_account(account, genesis):
     raise Exception("account not found")
 
 
-def migrate_seed_account(account, original_amount, vesting_amount, vestingStart, vestingEnd):
+def migrate_seed_account(account, original_amount, vesting_amount, vesting_start, vesting_end):
     account["_comment"] = "Seed Round Migration: ungm " + str(original_amount)
     account["type"] = "cosmos-sdk/ContinuousVestingAccount"
-    account["value"]["start_time"] = vestingStart
-    account["value"]["end_time"] = vestingEnd
+    account["value"]["start_time"] = time.mktime(vesting_start.timetuple())
+    account["value"]["end_time"] = time.mktime(vesting_end.timetuple())
     account["value"]["original_vesting"] = [
         {"amount": str(vesting_amount), "denom": "ungm"}]
     return account

@@ -28,7 +28,7 @@ with open("emoney-1.export.json") as importfile:
             if account is None:
                 raise ValueError("seed account missing")
             account = migrate_seed_account(
-                account, original_amount, vesting_amount, "1585137600", "1679745600")
+                account, original_amount, vesting_amount, genesis_time, genesis_time + datetime.timedelta(days=365))
             update_account(account, genesis)
 
     # Deliver tokens to private sale participants
