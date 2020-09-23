@@ -3,16 +3,13 @@ import csv
 from functions import *
 
 
-with open('emoney-1.export.json') as exportfile:
-    genesis = json.load(exportfile)
+with open('emoney-1.export.json') as importfile:
+    genesis = json.load(importfile)
 
     removeRestrictedDenoms(genesis)
 
-
-
-    with open('emoney-2.genesis.json', 'w', encoding='utf-8') as f:
-        json.dump(genesis, f, ensure_ascii=False, indent=4)
-
+    with open('emoney-2.genesis.json', 'w', encoding='utf-8') as exportfile:
+        json.dump(genesis, exportfile, ensure_ascii=False, indent=4)
 
 
 # with open('sale.csv') as csv_file:
