@@ -7,4 +7,7 @@ def removeRestrictedDenoms(genesis):
 
 def findAccount(address, genesis):
     for acc in genesis["app_state"]["auth"]["accounts"]:
-        print()
+        if acc["value"]["address"] == address:
+            return acc
+
+    return None
