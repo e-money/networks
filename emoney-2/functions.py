@@ -127,3 +127,21 @@ def migrate_treasury_account(account, vesting_start, vesting_end):
              "denom": "ungm"}
         ]})
     print(json.dumps(account, indent=2, sort_keys=True))
+
+
+def calculate_total_token_supply(genesis):
+    totalSupply = {}
+    for account in genesis["app_state"]["auth"]["accounts"]:
+        if "coins" not in account["value"]:
+            # Module accounts do not have a direct balance.
+            continue
+
+        for coin in account["value"]["coins"]:
+            balance = int(coin["amount"])
+            denom = coin["denom"]
+            if denom in totalSupply:
+                totalSupply[denom] += balance
+            else:
+                totalSupply[denom] = balance
+
+    return totalSupply

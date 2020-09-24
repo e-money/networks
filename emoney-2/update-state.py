@@ -6,7 +6,7 @@ from functions import *
 # TODO Currently genesis time of emoney-1 plus one year
 genesis_time = datetime.datetime(2021, 3, 25, 12, 0, 0, tzinfo=None)
 
-with open("emoney-1.export.json") as importfile:
+with open("emoney-1.migrated.json") as importfile:
     # Load emoney-1 export file
     genesis = json.load(importfile)
 
@@ -65,6 +65,10 @@ with open("emoney-1.export.json") as importfile:
 
     # Sanity check (total supply)
     # TODO
+    totalSupply = calculate_total_tokenSupply(genesis)
+    if totalSupply["ungm"] != 100000000 * 1000000:
+        print("WARN: sanity check failed. Unexpected supply of NGM token", totalSupply["ungm"])
+
 
     # Create emoney-2 genesis file
     with open("genesis.json", "w", encoding="utf-8") as exportfile:
