@@ -85,3 +85,20 @@ def new_account(address, account_number):
             "sequence": "0"
         }
     }
+
+def calculate_total_tokenSupply(genesis):
+    totalSupply = {}
+    for account in genesis["app_state"]["auth"]["accounts"]:
+        if "coins" not in account["value"]:
+            # Module accounts do not have a direct balance.
+            continue
+
+        for coin in account["value"]["coins"]:
+            balance = int(coin["amount"])
+            denom = coin["denom"]
+            if denom in totalSupply:
+                totalSupply[denom] += balance
+            else:
+                totalSupply[denom] = balance
+
+    return totalSupply
