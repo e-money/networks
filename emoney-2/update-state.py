@@ -9,6 +9,9 @@ genesis_time = datetime.datetime(2021, 3, 25, 12, 0, 0, tzinfo=None)
 with open("emoney-1.export.json") as importfile:
     # Load emoney-1 export file
     genesis = json.load(importfile)
+
+    # Update chain-id and genesis time
+    genesis["chain_id"] = "emoney-2"
     genesis["genesis_time"] = genesis_time.isoformat() + "Z"
 
     # Lift non-transferability restriction on NGM
@@ -61,7 +64,7 @@ with open("emoney-1.export.json") as importfile:
     # TODO
 
     # Create emoney-2 genesis file
-    with open("emoney-2.genesis.json", "w", encoding="utf-8") as exportfile:
+    with open("genesis.json", "w", encoding="utf-8") as exportfile:
         json.dump(genesis, exportfile,
                   indent=2, sort_keys=True)
 
