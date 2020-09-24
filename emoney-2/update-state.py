@@ -17,6 +17,12 @@ with open("emoney-1.export.json") as importfile:
     # Lift non-transferability restriction on NGM
     remove_restricted_denoms(genesis)
 
+    # Change treasury account to 3 year vesting
+    account = find_account(
+        "emoney1cs4323dyzu0wxfj4vc62m8q3xsczfavqx9x3zd", genesis)
+    migrate_treasury_account(account, genesis_time,
+                             genesis_time + datetime.timedelta(days=3*365))
+
     # Change allocation for seed round participants and introduce vesting
     with open("seed-round.csv") as csvfile:
         csv_reader = csv.DictReader(csvfile)
@@ -49,16 +55,13 @@ with open("emoney-1.export.json") as importfile:
                 account = new_account(address, next_account_number(genesis))
                 genesis["app_state"]["auth"]["accounts"].append(account)
             else:
-                print("Private sale account already exists: " + json.dumps(account))
+                # print("Private sale account already exists: " + json.dumps(account))
                 # Consider existing vesting amount
                 vesting_amount = vesting_amount + get_vesting_amount(account)
 
             account = update_private_sale_account(
                 account, vesting_amount, genesis_time, genesis_time + datetime.timedelta(days=182, hours=12))
             update_account(account, genesis)
-
-    # Adjust token distribution (Treasury, Ecosystem fund etc.)
-    # TODO
 
     # Sanity check (total supply)
     # TODO
