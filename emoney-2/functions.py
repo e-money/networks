@@ -130,7 +130,7 @@ def migrate_treasury_account(account, vesting_start, vesting_end):
 
 
 def calculate_total_token_supply(genesis):
-    totalSupply = {}
+    total_supply = {}
     for account in genesis["app_state"]["auth"]["accounts"]:
         if "coins" not in account["value"]:
             # Module accounts do not have a direct balance.
@@ -139,9 +139,9 @@ def calculate_total_token_supply(genesis):
         for coin in account["value"]["coins"]:
             balance = int(coin["amount"])
             denom = coin["denom"]
-            if denom in totalSupply:
-                totalSupply[denom] += balance
+            if denom in total_supply:
+                total_supply[denom] += balance
             else:
-                totalSupply[denom] = balance
+                total_supply[denom] = balance
 
-    return totalSupply
+    return total_supply
