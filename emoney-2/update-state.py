@@ -3,8 +3,7 @@ import csv
 import datetime
 from functions import *
 
-# TODO Currently genesis time of emoney-1 plus one year
-genesis_time = datetime.datetime(2021, 3, 25, 12, 0, 0, tzinfo=None)
+genesis_time = datetime.datetime.utcnow()
 
 with open("emoney-1.migrated.json") as importfile:
     # Load emoney-1 export file
