@@ -13,6 +13,9 @@ with open("emoney-1.migrated.json") as importfile:
     genesis["chain_id"] = "emoney-2"
     genesis["genesis_time"] = genesis_time.isoformat() + "Z"
 
+    # Increase max validators to 50
+    genesis["app_state"]["staking"]["params"]["max_validators"] = 50
+
     # Lift non-transferability restriction on NGM
     remove_restricted_denoms(genesis)
 
