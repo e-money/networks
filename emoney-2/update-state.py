@@ -41,25 +41,26 @@ with open("emoney-1.migrated.json") as importfile:
 
     # Deliver tokens to private sale participants
     with open("private-sale.csv") as csvfile:
-        vesting_period = datetime.timedelta(days=365/2)
         csv_reader = csv.DictReader(csvfile)
         for row in csv_reader:
             address = row["address"]
-            # Vesting amount as ungm
-            vesting_amount = int(row["amount"]) * 1000000
+            # Amount as ungm
+            amount = int(row["amount"]) * 1000000
+            # 20% unlocked, 80% vesting for 6 months
+            available_amount = int(0.20 * amount)
+            vesting_amount = amount - available_amount
+            vesting_period = datetime.timedelta(days=365/2)
 
             account = find_account(address, genesis)
             if account is None:
-                # print("Created new account for " + address)
+                print("Delivering private sale tokens to new account: " + address)
                 account = new_account(address, next_account_number(genesis))
                 genesis["app_state"]["auth"]["accounts"].append(account)
             else:
-                # print("Private sale account already exists: " + json.dumps(account))
-                # Consider existing vesting amount
-                vesting_amount = vesting_amount + get_vesting_amount(account)
+                print("Delivering private sale tokens to existing account: " + address)
 
             account = update_private_sale_account(
-                account, vesting_amount, genesis_time, genesis_time + datetime.timedelta(days=182, hours=12))
+                account, available_amount, vesting_amount, genesis_time, genesis_time + vesting_period)
             update_account(account, genesis)
 
     # Sanity check (total supply)

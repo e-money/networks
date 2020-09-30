@@ -54,15 +54,6 @@ def set_amount(coins, denom, amount):
             coin["amount"] = str(amount)
 
 
-def get_vesting_amount(account):
-    if account["type"] != "cosmos-sdk/ContinuousVestingAccount":
-        raise ValueError("unsupported account type")
-    for coin in account["value"]["original_vesting"]:
-        if coin["denom"] == "ungm":
-            return int(coin["amount"])
-    return 0
-
-
 def next_account_number(genesis):
     highest_number = 0
     for account in genesis["app_state"]["auth"]["accounts"]:
@@ -79,7 +70,6 @@ def migrate_seed_round_account(account, original_amount, vesting_start, vesting_
     account["_comment_1"] = "Seed Round Migration: ungm " + \
         str(original_amount)
     account["type"] = "cosmos-sdk/ContinuousVestingAccount"
-
     account["value"].update({
         "delegated_free": [],
         "delegated_vesting": [],
@@ -91,11 +81,22 @@ def migrate_seed_round_account(account, original_amount, vesting_start, vesting_
     return account
 
 
-def update_private_sale_account(account, vesting_amount, vesting_start, vesting_end):
+def update_private_sale_account(account, available_amount, vesting_amount, vesting_start, vesting_end):
     account["_comment_2"] = "Private Sale Delivery: ungm " + \
-        str(vesting_amount)
-    account["type"] = "cosmos-sdk/ContinuousVestingAccount"
+        str(available_amount + vesting_amount)
 
+    # Consider existing amounts
+    available_amount = available_amount + \
+        get_amount(account["value"]["coins"], "ungm")
+    if account["type"] == "cosmos-sdk/ContinuousVestingAccount":
+        vesting_amount = vesting_amount + \
+            get_amount(account["value"]["original_vesting"], "ungm")
+
+    # Set available amount
+    set_amount(account["value"]["coins"], "ungm", available_amount)
+
+    # Update vesting
+    account["type"] = "cosmos-sdk/ContinuousVestingAccount"
     account["value"].update({
         "delegated_free": [],
         "delegated_vesting": [],
