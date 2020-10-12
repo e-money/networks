@@ -24,6 +24,19 @@ with open("emoney-1.migrated.json") as importfile:
     migrate_treasury_account(account, genesis_time,
                              genesis_time + datetime.timedelta(days=3*365))
 
+    # Change ecosystem account to 3 year vesting
+    account = get_account(
+        "emoney14r5rva8qk5ee6rvk5sdtmxea40uf74k7uh4yjv", genesis)
+    migrate_ecosystem_account(account, genesis_time,
+                              genesis_time + datetime.timedelta(days=3*365))
+
+    # Add Customer Acquisition account
+    account = new_account(
+        "TBD", next_account_number(genesis))
+    genesis["app_state"]["auth"]["accounts"].append(account)
+    add_customer_acquisition_account(account, genesis_time,
+                                     genesis_time + datetime.timedelta(days=2*365))
+
     # Change allocation for seed round participants and introduce vesting
     migrate_seed_round_accounts(
         genesis, "seed-round.csv", genesis_time)

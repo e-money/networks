@@ -107,12 +107,45 @@ def migrate_treasury_account(account, vesting_start, vesting_end):
         ]})
 
 
-# coins_amount + delegated_vesting_amount + delegated_free_amount = total account balance
+def migrate_ecosystem_account(account, vesting_start, vesting_end):
+    account["_comment"] = "Ecosystem Fund (Grants)"
+
+    original_vesting_amount = get_amount(account["value"]["coins"], "ungm")
+
+    account["value"].update({
+        "start_time": str(int(vesting_start.timestamp())),
+        "end_time": str(int(vesting_end.timestamp())),
+        "original_vesting": [
+            {"amount": str(original_vesting_amount),
+             "denom": "ungm"}
+        ]})
+
+
+def add_customer_acquisition_account(account, vesting_start, vesting_end):
+    account["_comment"] = "Customer Acquisition"
+
+    original_vesting_amount = 8300000*1000000
+
+    account["type"] = "cosmos-sdk/ContinuousVestingAccount"
+    account["value"].update({
+        "coins": [
+            {"amount": str(original_vesting_amount),
+             "denom": "ungm"}
+        ],
+        "start_time": str(int(vesting_start.timestamp())),
+        "end_time": str(int(vesting_end.timestamp())),
+        "original_vesting": [
+            {"amount": str(original_vesting_amount),
+             "denom": "ungm"}
+        ]})
+
+
 def migrate_seed_round_account(account, purchased_amount, coins_amount, delegated_amount, vesting_start, vesting_end):
+    # coins_amount + delegated_vesting_amount + delegated_free_amount = total account balance
     total_amount = coins_amount + delegated_amount
     shift_amount = total_amount - purchased_amount
 
-    account["_1_seed_migration"] = "purchased_amount: {0}, total_amount: {1}, coins_amount: {2}, delegated_amount: {3}, shift_amount: {4}".format(
+    account["_comment"] = "Seed Migration: purchased_amount: {0}, total_amount: {1}, coins_amount: {2}, delegated_amount: {3}, shift_amount: {4}".format(
         purchased_amount, total_amount, coins_amount, delegated_amount, shift_amount)
 
     original_vesting_amount = int(
@@ -174,7 +207,7 @@ def update_private_sale_account(account, purchased_amount, vesting_start, vestin
     unlocked_amount = int(0.20 * purchased_amount)
     vesting_amount = purchased_amount - unlocked_amount
 
-    account["_2_private_sale_delivery"] = "purchased_amount: {0}, unlocked_amount: {1}, vesting_amount: {2}".format(
+    account["_comment"] = "Private Sale Delivery: purchased_amount: {0}, unlocked_amount: {1}, vesting_amount: {2}".format(
         purchased_amount, unlocked_amount, vesting_amount)
 
     # Consider existing amounts
