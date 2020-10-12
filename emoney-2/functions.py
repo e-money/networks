@@ -54,6 +54,10 @@ def set_amount(coins, denom, amount):
     for coin in coins:
         if coin["denom"] == denom:
             coin["amount"] = str(amount)
+            return
+    coins.append(
+        {"amount": str(amount), "denom": denom}
+    )
 
 
 def get_delegation_amount(shares, validator_address, genesis):
@@ -82,6 +86,25 @@ def next_account_number(genesis):
         highest_number = max(highest_number, int(
             account["value"]["account_number"]))
     return highest_number + 1
+
+
+def migrate_treasury_account(account, vesting_start, vesting_end):
+    account["_comment"] = "Treasury"
+
+    # Account on emoney-1 chain contained 50M "e-Money A/S" + 15M "Fundraiser"
+    coins_amount = get_amount(account["value"]["coins"], "ungm")
+
+    # Decrease by 5M to reach 60M "Treasury" allocation for emoney-2 and adjust vesting amount and period
+    coins_amount = coins_amount - (5000000 * 1000000)
+    set_amount(account["value"]["coins"], "ungm", coins_amount)
+
+    account["value"].update({
+        "start_time": str(int(vesting_start.timestamp())),
+        "end_time": str(int(vesting_end.timestamp())),
+        "original_vesting": [
+            {"amount": str(60000000*1000000),
+             "denom": "ungm"}
+        ]})
 
 
 # coins_amount + delegated_vesting_amount + delegated_free_amount = total account balance
@@ -196,28 +219,6 @@ def update_private_sale_accounts(genesis, filename, vesting_start):
             account = update_private_sale_account(
                 account, purchased_amount, vesting_start, vesting_start + datetime.timedelta(days=365/2))
             update_account(account, genesis)
-
-
-def migrate_treasury_account(account, vesting_start, vesting_end):
-    print(json.dumps(account, indent=2, sort_keys=True))
-    account["_comment_0"] = "Treasury"
-
-    # Account on emoney-1 chain contained 50M "e-Money A/S" + 15M "Fundraiser"
-    available_amount = get_amount(account["value"]["coins"], "ungm")
-
-    # Decrease by 5M to reach 60M "Treasury" allocation for emoney-2 and adjust vesting amount and period
-    available_amount = available_amount - (5000000 * 1000000)
-    set_amount(account["value"]["coins"], "ungm", available_amount)
-    delegated_amount = get_amount(
-        account["value"]["delegated_vesting"], "ungm")
-    account["value"].update({
-        "start_time": str(int(vesting_start.timestamp())),
-        "end_time": str(int(vesting_end.timestamp())),
-        "original_vesting": [
-            {"amount": str(available_amount + delegated_amount),
-             "denom": "ungm"}
-        ]})
-    print(json.dumps(account, indent=2, sort_keys=True))
 
 
 def calculate_total_token_supply(genesis):
