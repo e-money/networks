@@ -91,18 +91,18 @@ def next_account_number(genesis):
 def migrate_treasury_account(account, vesting_start, vesting_end):
     account["_comment"] = "Treasury"
 
-    # Account on emoney-1 chain contained 50M "e-Money A/S" + 15M "Fundraiser"
-    coins_amount = get_amount(account["value"]["coins"], "ungm")
+    delegated_amount = get_amount(
+        account["value"]["delegated_vesting"], "ungm")
 
-    # Decrease by 5M to reach 60M "Treasury" allocation for emoney-2 and adjust vesting amount and period
-    coins_amount = coins_amount - (5000000 * 1000000)
+    original_vesting_amount = 60000000*1000000
+    coins_amount = original_vesting_amount - delegated_amount
     set_amount(account["value"]["coins"], "ungm", coins_amount)
 
     account["value"].update({
         "start_time": str(int(vesting_start.timestamp())),
         "end_time": str(int(vesting_end.timestamp())),
         "original_vesting": [
-            {"amount": str(60000000*1000000),
+            {"amount": str(original_vesting_amount),
              "denom": "ungm"}
         ]})
 
