@@ -43,12 +43,3 @@ with open("emoney-1.migrated.json") as importfile:
     with open("genesis.json", "w", encoding="utf-8") as exportfile:
         json.dump(genesis, exportfile,
                   indent=2, sort_keys=True)
-
-
-# Open migrated Genesis
-# 1. Private sale delivery
-# 2. Apply updated token distribution
-# 3. Adjust seed round amounts
-
-# 4. Verifications and sanity checks.
-#     - Supply check

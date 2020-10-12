@@ -84,43 +84,42 @@ def next_account_number(genesis):
     return highest_number + 1
 
 
-def migrate_seed_round_account(account, purchased_amount, available_amount, delegated_amount, vesting_start, vesting_end):
-    total_amount = available_amount + delegated_amount
-    spent_amount = max(0, purchased_amount - total_amount)
+# coins_amount + delegated_vesting_amount + delegated_free_amount = total account balance
+def migrate_seed_round_account(account, purchased_amount, coins_amount, delegated_amount, vesting_start, vesting_end):
+    total_amount = coins_amount + delegated_amount
+    shift_amount = total_amount - purchased_amount
 
-    if(total_amount > purchased_amount):
-        print("Seed account above purchased:",
-              account["value"]["address"], purchased_amount, total_amount)
+    account["_1_seed_migration"] = "purchased_amount: {0}, total_amount: {1}, coins_amount: {2}, delegated_amount: {3}, shift_amount: {4}".format(
+        purchased_amount, total_amount, coins_amount, delegated_amount, shift_amount)
 
-    # Leave at least 10 NGM available for fees
-    reservation_amount = 10 * 1000000
-
-    # Adjusted amount which must now be vested
-    vesting_amount = int(
+    original_vesting_amount = int(
         round((purchased_amount * 2285000 / 387000)))
-    # vesting_amount = purchased_amount
-    vesting_amount = vesting_amount - spent_amount - reservation_amount
 
-    available_amount = total_amount - vesting_amount
+    delegated_vesting_amount = min(delegated_amount, purchased_amount)
+    delegated_free_amount = delegated_amount - delegated_vesting_amount
 
-    account["_comment_1"] = "Seed Round Migration. Purchased: " + \
-        str(purchased_amount) + ", Spent: " + str(spent_amount)
+    total_amount = original_vesting_amount + shift_amount
+    coins_amount = total_amount - delegated_free_amount - delegated_vesting_amount
 
-    if spent_amount > 0:
-        account["_comment_2"] = "Already spent: ungm " + \
-            str(spent_amount)
+    # account["_1_b_seed_migration"] = "original_vesting_amount: {0}, total_amount: {1}, coins_amount: {2}, delegated_vesting_amount: {3}, delegated_free_amount: {4}".format(
+    #     original_vesting_amount, total_amount, coins_amount, delegated_vesting_amount, delegated_free_amount)
+
+    if coins_amount < 0 or delegated_vesting_amount < 0 or delegated_free_amount < 0 or original_vesting_amount < 0:
+        raise ValueError("negative amount")
 
     account["type"] = "cosmos-sdk/ContinuousVestingAccount"
-    set_amount(account["value"]["coins"], "ungm", available_amount)
+    set_amount(account["value"]["coins"], "ungm", coins_amount)
     account["value"].update({
-        "delegated_free": [],
+        "delegated_free": [
+            {"amount": str(delegated_free_amount), "denom": "ungm"}
+        ],
         "delegated_vesting": [
-            {"amount": str(vesting_amount), "denom": "ungm"}
+            {"amount": str(delegated_vesting_amount), "denom": "ungm"}
         ],
         "start_time": str(int(vesting_start.timestamp())),
         "end_time": str(int(vesting_end.timestamp())),
         "original_vesting": [
-            {"amount": str(vesting_amount), "denom": "ungm"}
+            {"amount": str(original_vesting_amount), "denom": "ungm"}
         ]})
     return account
 
@@ -138,38 +137,42 @@ def migrate_seed_round_accounts(genesis, filename, vesting_start):
             if account is None:
                 raise ValueError("seed account missing")
 
-            available_amount = get_amount(account["value"]["coins"], "ungm")
+            coins_amount = get_amount(account["value"]["coins"], "ungm")
             delegated_amount = get_delegated_amount(
                 account["value"]["address"], genesis)
 
             account = migrate_seed_round_account(
-                account, purchased_amount, available_amount, delegated_amount, vesting_start, vesting_start + datetime.timedelta(days=365))
+                account, purchased_amount, coins_amount, delegated_amount, vesting_start, vesting_start + datetime.timedelta(days=365))
             update_account(account, genesis)
 
 
-def update_private_sale_account(account, available_amount, vesting_amount, vesting_start, vesting_end):
-    account["_comment_2"] = "Private Sale Delivery: ungm " + \
-        str(available_amount + vesting_amount)
+def update_private_sale_account(account, purchased_amount, vesting_start, vesting_end):
+    # 20% unlocked, 80% vesting for 6 months
+    unlocked_amount = int(0.20 * purchased_amount)
+    vesting_amount = purchased_amount - unlocked_amount
+
+    account["_2_private_sale_delivery"] = "purchased_amount: {0}, unlocked_amount: {1}, vesting_amount: {2}".format(
+        purchased_amount, unlocked_amount, vesting_amount)
 
     # Consider existing amounts
-    available_amount = available_amount + \
+    coins_amount = purchased_amount + \
         get_amount(account["value"]["coins"], "ungm")
+
+    original_vesting_amount = vesting_amount
     if account["type"] == "cosmos-sdk/ContinuousVestingAccount":
-        vesting_amount = vesting_amount + \
-            get_amount(account["value"]["original_vesting"], "ungm")
+        original_vesting_amount = original_vesting_amount + get_amount(
+            account["value"]["original_vesting"], "ungm")
 
     # Set available amount
-    set_amount(account["value"]["coins"], "ungm", available_amount)
+    set_amount(account["value"]["coins"], "ungm", coins_amount)
 
     # Update vesting
     account["type"] = "cosmos-sdk/ContinuousVestingAccount"
     account["value"].update({
-        "delegated_free": [],
-        "delegated_vesting": [],
         "start_time": str(int(vesting_start.timestamp())),
         "end_time": str(int(vesting_end.timestamp())),
         "original_vesting": [
-            {"amount": str(vesting_amount), "denom": "ungm"}
+            {"amount": str(original_vesting_amount), "denom": "ungm"}
         ]})
     return account
 
@@ -179,22 +182,19 @@ def update_private_sale_accounts(genesis, filename, vesting_start):
         csv_reader = csv.DictReader(csvfile)
         for row in csv_reader:
             address = row["address"]
-            # Amount as ungm
-            amount = int(row["amount"]) * 1000000
-            # 20% unlocked, 80% vesting for 6 months
-            available_amount = int(0.20 * amount)
-            vesting_amount = amount - available_amount
+            # Purchased amount as ungm
+            purchased_amount = int(row["amount"]) * 1000000
 
             account = get_account(address, genesis)
             if account is None:
-                print("Delivering private sale tokens to new account: " + address)
+                # print("Delivering private sale tokens to new account: " + address)
                 account = new_account(address, next_account_number(genesis))
                 genesis["app_state"]["auth"]["accounts"].append(account)
             else:
                 print("Delivering private sale tokens to existing account: " + address)
 
             account = update_private_sale_account(
-                account, available_amount, vesting_amount, vesting_start, vesting_start + datetime.timedelta(days=365/2))
+                account, purchased_amount, vesting_start, vesting_start + datetime.timedelta(days=365/2))
             update_account(account, genesis)
 
 
@@ -224,7 +224,6 @@ def calculate_total_token_supply(genesis):
     total_supply = {}
     for account in genesis["app_state"]["auth"]["accounts"]:
         if "coins" not in account["value"]:
-            # Module accounts do not have a direct balance.
             continue
 
         for coin in account["value"]["coins"]:
