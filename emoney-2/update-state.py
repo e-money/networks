@@ -19,10 +19,10 @@ with open("emoney-1.migrated.json") as importfile:
     remove_restricted_denoms(genesis)
 
     # Change treasury account to 3 year vesting
-    # account = find_account(
-    #     "emoney1cs4323dyzu0wxfj4vc62m8q3xsczfavqx9x3zd", genesis)
-    # migrate_treasury_account(account, genesis_time,
-    #                          genesis_time + datetime.timedelta(days=3*365))
+    account = get_account(
+        "emoney1cs4323dyzu0wxfj4vc62m8q3xsczfavqx9x3zd", genesis)
+    migrate_treasury_account(account, genesis_time,
+                             genesis_time + datetime.timedelta(days=3*365))
 
     # Change allocation for seed round participants and introduce vesting
     migrate_seed_round_accounts(
