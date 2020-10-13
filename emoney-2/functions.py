@@ -124,7 +124,7 @@ def migrate_ecosystem_account(account, vesting_start, vesting_end):
 def add_customer_acquisition_account(account, vesting_start, vesting_end):
     account["_comment"] = "Customer Acquisition"
 
-    original_vesting_amount = 8300000*1000000
+    original_vesting_amount = 8000000*1000000
 
     account["type"] = "cosmos-sdk/ContinuousVestingAccount"
     account["value"].update({
@@ -140,16 +140,28 @@ def add_customer_acquisition_account(account, vesting_start, vesting_end):
         ]})
 
 
-def migrate_seed_round_account(account, purchased_amount, coins_amount, delegated_amount, vesting_start, vesting_end):
+def migrate_liquidity_provisioning_account(account, sold_amount, vesting_start, vesting_end):
+    account["_comment"] = "Liquidity Provisioning"
+
+    original_vesting_amount = 22000000*1000000 - sold_amount
+    set_amount(account["value"]["coins"], "ungm", original_vesting_amount)
+
+    account["value"].update({
+        "start_time": str(int(vesting_start.timestamp())),
+        "end_time": str(int(vesting_end.timestamp())),
+        "original_vesting": [
+            {"amount": str(original_vesting_amount),
+             "denom": "ungm"}
+        ]})
+
+
+def migrate_seed_round_account(account, purchased_amount, original_vesting_amount, coins_amount, delegated_amount, vesting_start, vesting_end):
     # coins_amount + delegated_vesting_amount + delegated_free_amount = total account balance
     total_amount = coins_amount + delegated_amount
     shift_amount = total_amount - purchased_amount
 
     account["_comment"] = "Seed Migration: purchased_amount: {0}, total_amount: {1}, coins_amount: {2}, delegated_amount: {3}, shift_amount: {4}".format(
         purchased_amount, total_amount, coins_amount, delegated_amount, shift_amount)
-
-    original_vesting_amount = int(
-        round((purchased_amount * 2285000 / 387000)))
 
     delegated_vesting_amount = min(delegated_amount, purchased_amount)
     delegated_free_amount = delegated_amount - delegated_vesting_amount
@@ -181,6 +193,7 @@ def migrate_seed_round_account(account, purchased_amount, coins_amount, delegate
 
 
 def migrate_seed_round_accounts(genesis, filename, vesting_start):
+    total_amount = 0
     with open(filename) as csvfile:
         csv_reader = csv.DictReader(csvfile)
         for row in csv_reader:
@@ -188,6 +201,10 @@ def migrate_seed_round_accounts(genesis, filename, vesting_start):
 
             # Original purchased amount as ungm
             purchased_amount = int(row["amount"]) * 1000000
+
+            original_vesting_amount = int(
+                round((purchased_amount * 2285000 / 387000)))
+            total_amount += original_vesting_amount
 
             account = get_account(address, genesis)
             if account is None:
@@ -198,8 +215,9 @@ def migrate_seed_round_accounts(genesis, filename, vesting_start):
                 account["value"]["address"], genesis)
 
             account = migrate_seed_round_account(
-                account, purchased_amount, coins_amount, delegated_amount, vesting_start, vesting_start + datetime.timedelta(days=365))
+                account, purchased_amount, original_vesting_amount, coins_amount, delegated_amount, vesting_start, vesting_start + datetime.timedelta(days=365))
             update_account(account, genesis)
+    return total_amount
 
 
 def update_private_sale_account(account, purchased_amount, vesting_start, vesting_end):
@@ -234,12 +252,15 @@ def update_private_sale_account(account, purchased_amount, vesting_start, vestin
 
 
 def update_private_sale_accounts(genesis, filename, vesting_start):
+    total_amount = 0
     with open(filename) as csvfile:
         csv_reader = csv.DictReader(csvfile)
         for row in csv_reader:
             address = row["address"]
+
             # Purchased amount as ungm
-            purchased_amount = int(row["amount"]) * 1000000
+            purchased_amount = int(float(row["amount"]) * 1000000)
+            total_amount += purchased_amount
 
             account = get_account(address, genesis)
             if account is None:
@@ -252,6 +273,7 @@ def update_private_sale_accounts(genesis, filename, vesting_start):
             account = update_private_sale_account(
                 account, purchased_amount, vesting_start, vesting_start + datetime.timedelta(days=365/2))
             update_account(account, genesis)
+    return total_amount
 
 
 def calculate_total_token_supply(genesis):

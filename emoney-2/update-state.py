@@ -38,19 +38,27 @@ with open("emoney-1.migrated.json") as importfile:
                                      genesis_time + datetime.timedelta(days=2*365))
 
     # Change allocation for seed round participants and introduce vesting
-    migrate_seed_round_accounts(
+    seed_round_purchase_amount = migrate_seed_round_accounts(
         genesis, "seed-round.csv", genesis_time)
 
     # Deliver tokens to private sale participants
-    update_private_sale_accounts(
+    private_sale_purchase_amount = update_private_sale_accounts(
         genesis, "private-sale.csv", genesis_time)
 
+    # Adjust Liquidity Provisioning account
+    account = get_account(
+        "emoney147verqcxwdkgrn663x2qj66zyqc5mu479afw9n", genesis)
+    migrate_liquidity_provisioning_account(
+        account, seed_round_purchase_amount + private_sale_purchase_amount, genesis_time,
+        genesis_time + datetime.timedelta(days=365))
+
+    print(seed_round_purchase_amount, private_sale_purchase_amount)
+
     # Sanity check (total supply)
-    # TODO
     total_supply = calculate_total_token_supply(genesis)
     if total_supply["ungm"] != 100000000 * 1000000:
-        print("WARN: sanity check failed. Unexpected supply of NGM token:",
-              total_supply["ungm"])
+        print("WARN: sanity check failed. Unexpected supply of ungm token:",
+              total_supply["ungm"], total_supply["ungm"] / 1000000)
 
     # Create emoney-2 genesis file
     with open("genesis.json", "w", encoding="utf-8") as exportfile:
