@@ -52,8 +52,6 @@ with open("emoney-1.migrated.json") as importfile:
         account, seed_round_purchase_amount + private_sale_purchase_amount, genesis_time,
         genesis_time + datetime.timedelta(days=365))
 
-    print(seed_round_purchase_amount, private_sale_purchase_amount)
-
     # Sanity check (total supply)
     total_supply = calculate_total_token_supply(genesis)
     if total_supply["ungm"] != 100000000 * 1000000:
@@ -63,4 +61,4 @@ with open("emoney-1.migrated.json") as importfile:
     # Create emoney-2 genesis file
     with open("genesis.json", "w", encoding="utf-8") as exportfile:
         json.dump(genesis, exportfile,
-                  indent=2, sort_keys=True)
+                  indent=2, sort_keys=True, ensure_ascii=False)
