@@ -67,6 +67,24 @@ def set_amount(coins, denom, amount):
     )
 
 
+def replace_address(source, destination, genesis):
+    for account in genesis["app_state"]["auth"]["accounts"]:
+        if account["value"]["address"] == source:
+            account["value"]["address"] = destination
+
+    for delegator_starting_infos in genesis["app_state"]["distribution"]["delegator_starting_infos"]:
+        if delegator_starting_infos["delegator_address"] == source:
+            delegator_starting_infos["delegator_address"] = destination
+
+    for delegation in genesis["app_state"]["staking"]["delegations"]:
+        if delegation["delegator_address"] == source:
+            delegation["delegator_address"] = destination
+
+    for unbonding_delegation in genesis["app_state"]["staking"]["unbonding_delegations"]:
+        if unbonding_delegation["delegator_address"] == source:
+            unbonding_delegation["delegator_address"] = destination
+
+
 def get_unbonding_amount(delegator_address, validator_address, genesis):
     for unbonding_delegation in genesis["app_state"]["staking"]["unbonding_delegations"]:
         if unbonding_delegation["delegator_address"] == delegator_address and unbonding_delegation["validator_address"] == validator_address:
