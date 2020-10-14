@@ -28,6 +28,13 @@ def get_account(address, genesis):
     return None
 
 
+def get_module_account(name, genesis):
+    for account in genesis["app_state"]["auth"]["accounts"]:
+        if "name" in account["value"] and account["value"]["name"] == name:
+            return account
+    return None
+
+
 def update_account(account, genesis):
     for target in genesis["app_state"]["auth"]["accounts"]:
         if target["value"]["address"] == account["value"]["address"]:
@@ -100,7 +107,10 @@ def next_account_number(genesis):
     return highest_number + 1
 
 
-def migrate_treasury_account(account, vesting_start, vesting_end):
+def migrate_treasury_account(genesis, vesting_start, vesting_end):
+    account = get_account(
+        "emoney1cs4323dyzu0wxfj4vc62m8q3xsczfavqx9x3zd", genesis)
+
     account["_comment"] = "Treasury"
 
     delegated_amount = get_amount(
@@ -118,10 +128,14 @@ def migrate_treasury_account(account, vesting_start, vesting_end):
              "denom": "ungm"}
         ]})
 
+    update_account(account, genesis)
 
-def migrate_ecosystem_account(account, vesting_start, vesting_end):
+
+def migrate_ecosystem_account(genesis, vesting_start, vesting_end):
+    account = get_account(
+        "emoney14r5rva8qk5ee6rvk5sdtmxea40uf74k7uh4yjv", genesis)
+
     account["_comment"] = "Ecosystem Fund (Grants)"
-
     original_vesting_amount = get_amount(account["value"]["coins"], "ungm")
 
     account["value"].update({
@@ -132,8 +146,13 @@ def migrate_ecosystem_account(account, vesting_start, vesting_end):
              "denom": "ungm"}
         ]})
 
+    update_account(account, genesis)
 
-def add_customer_acquisition_account(account, vesting_start, vesting_end):
+
+def add_customer_acquisition_account(genesis, vesting_start, vesting_end):
+    account = new_account(
+        "TBD", next_account_number(genesis))
+
     account["_comment"] = "Customer Acquisition"
 
     original_vesting_amount = 8000000*1000000
@@ -151,20 +170,36 @@ def add_customer_acquisition_account(account, vesting_start, vesting_end):
              "denom": "ungm"}
         ]})
 
+    genesis["app_state"]["auth"]["accounts"].append(account)
 
-def migrate_liquidity_provisioning_account(account, sold_amount, vesting_start, vesting_end):
+
+def migrate_liquidity_provisioning_account(genesis, vesting_start, vesting_end):
+    address = "emoney147verqcxwdkgrn663x2qj66zyqc5mu479afw9n"
+
+    # Get remaining amount
+    coins_amount = 100 * 1000000 * 1000000
+    for account in genesis["app_state"]["auth"]["accounts"]:
+        if "coins" not in account["value"]:
+            continue
+        if account["value"]["address"] != address:
+            coins_amount -= get_amount(
+                account["value"]["coins"], "ungm")
+    original_vesting_amount = int(0.95 * coins_amount)
+
+    account = get_account(address, genesis)
     account["_comment"] = "Liquidity Provisioning"
 
-    original_vesting_amount = 22000000*1000000 - sold_amount
-    set_amount(account["value"]["coins"], "ungm", original_vesting_amount)
-
+    set_amount(account["value"]["coins"], "ungm", coins_amount)
     account["value"].update({
+        "_hello_world": "yay",
         "start_time": str(int(vesting_start.timestamp())),
         "end_time": str(int(vesting_end.timestamp())),
         "original_vesting": [
             {"amount": str(original_vesting_amount),
              "denom": "ungm"}
         ]})
+
+    update_account(account, genesis)
 
 
 def migrate_seed_round_account(account, purchased_amount, original_vesting_amount, coins_amount, delegated_amount, vesting_start, vesting_end):
@@ -278,8 +313,8 @@ def update_private_sale_accounts(genesis, filename, vesting_start):
                 # print("Delivering private sale tokens to new account: " + address)
                 account = new_account(address, next_account_number(genesis))
                 genesis["app_state"]["auth"]["accounts"].append(account)
-            else:
-                print("Delivering private sale tokens to existing account: " + address)
+            # else:
+            #     print("Delivering private sale tokens to existing account: " + address)
 
             account = update_private_sale_account(
                 account, purchased_amount, vesting_start, vesting_start + datetime.timedelta(days=365/2))
@@ -310,3 +345,19 @@ def get_total_delegated_tokens(genesis):
         total_delegated += get_delegated_amount(
             account["value"]["address"], genesis)
     return total_delegated
+
+
+def sanity_check(genesis):
+    # Verify delegations match the bonded pools
+    total_delegated_amount = get_total_delegated_tokens(genesis)
+    bonded_tokens_amount = get_amount(get_module_account(
+        "bonded_tokens_pool", genesis)["value"]["coins"], "ungm")
+    not_bonded_tokens_amount = get_amount(get_module_account(
+        "not_bonded_tokens_pool", genesis)["value"]["coins"], "ungm")
+    assert(total_delegated_amount ==
+           bonded_tokens_amount + not_bonded_tokens_amount)
+
+    # Verify total supply of 100M NGM
+    total_coins_amount = get_total_coins_amount(genesis)
+    assert(total_coins_amount["ungm"] == 100000000 * 1000000)
+    print("Total supply:", total_coins_amount)
