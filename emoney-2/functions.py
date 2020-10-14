@@ -60,7 +60,17 @@ def set_amount(coins, denom, amount):
     )
 
 
-def get_delegation_amount(shares, validator_address, genesis):
+def get_unbonding_amount(delegator_address, validator_address, genesis):
+    for unbonding_delegation in genesis["app_state"]["staking"]["unbonding_delegations"]:
+        if unbonding_delegation["delegator_address"] == delegator_address and unbonding_delegation["validator_address"] == validator_address:
+            total_unbonding_amount = 0
+            for entry in unbonding_delegation["entries"]:
+                total_unbonding_amount += int(entry["balance"])
+            return total_unbonding_amount
+    return 0
+
+
+def get_bonded_amount(shares, validator_address, genesis):
     for validator in genesis["app_state"]["staking"]["validators"]:
         if validator["operator_address"] == validator_address:
             total_shares = float(validator["delegator_shares"])
@@ -75,8 +85,10 @@ def get_delegated_amount(delegator_address, genesis):
         if delegation["delegator_address"] == delegator_address:
             validator_address = delegation["validator_address"]
             shares = float(delegation["shares"])
-            delegated_amount = delegated_amount + \
-                get_delegation_amount(shares, validator_address, genesis)
+            delegated_amount += get_bonded_amount(
+                shares, validator_address, genesis)
+            delegated_amount += get_unbonding_amount(
+                delegator_address, validator_address, genesis)
     return delegated_amount
 
 
@@ -200,10 +212,9 @@ def migrate_seed_round_accounts(genesis, filename, vesting_start):
             address = row["address"]
 
             # Original purchased amount as ungm
-            purchased_amount = int(row["amount"]) * 1000000
-
+            purchased_amount = int(float(row["amount"]) * 1000000)
             original_vesting_amount = int(
-                round((purchased_amount * 2285000 / 387000)))
+                round(purchased_amount * 2285000 / 387000))
             total_amount += original_vesting_amount
 
             account = get_account(address, genesis)
@@ -222,7 +233,7 @@ def migrate_seed_round_accounts(genesis, filename, vesting_start):
 
 def update_private_sale_account(account, purchased_amount, vesting_start, vesting_end):
     # 20% unlocked, 80% vesting for 6 months
-    unlocked_amount = int(0.20 * purchased_amount)
+    unlocked_amount = int(round(0.20 * purchased_amount))
     vesting_amount = purchased_amount - unlocked_amount
 
     account["_comment"] = "Private Sale Delivery: purchased_amount: {0}, unlocked_amount: {1}, vesting_amount: {2}".format(
@@ -234,7 +245,7 @@ def update_private_sale_account(account, purchased_amount, vesting_start, vestin
 
     original_vesting_amount = vesting_amount
     if account["type"] == "cosmos-sdk/ContinuousVestingAccount":
-        original_vesting_amount = original_vesting_amount + get_amount(
+        original_vesting_amount += get_amount(
             account["value"]["original_vesting"], "ungm")
 
     # Set available amount
@@ -276,8 +287,8 @@ def update_private_sale_accounts(genesis, filename, vesting_start):
     return total_amount
 
 
-def calculate_total_token_supply(genesis):
-    total_supply = {}
+def get_total_coins_amount(genesis):
+    total_coins_amount = {}
     for account in genesis["app_state"]["auth"]["accounts"]:
         if "coins" not in account["value"]:
             continue
@@ -285,9 +296,17 @@ def calculate_total_token_supply(genesis):
         for coin in account["value"]["coins"]:
             balance = int(coin["amount"])
             denom = coin["denom"]
-            if denom in total_supply:
-                total_supply[denom] += balance
+            if denom in total_coins_amount:
+                total_coins_amount[denom] += balance
             else:
-                total_supply[denom] = balance
+                total_coins_amount[denom] = balance
 
-    return total_supply
+    return total_coins_amount
+
+
+def get_total_delegated_tokens(genesis):
+    total_delegated = 0
+    for account in genesis["app_state"]["auth"]["accounts"]:
+        total_delegated += get_delegated_amount(
+            account["value"]["address"], genesis)
+    return total_delegated

@@ -52,13 +52,15 @@ with open("emoney-1.migrated.json") as importfile:
         account, seed_round_purchase_amount + private_sale_purchase_amount, genesis_time,
         genesis_time + datetime.timedelta(days=365))
 
-    # Sanity check (total supply)
-    total_supply = calculate_total_token_supply(genesis)
-    if total_supply["ungm"] != 100000000 * 1000000:
+    # Sanity check
+    total_coins_amount = get_total_coins_amount(genesis)
+    if total_coins_amount["ungm"] != 100000000 * 1000000:
         print("WARN: sanity check failed. Unexpected supply of ungm token:",
-              total_supply["ungm"], total_supply["ungm"] / 1000000)
+              total_coins_amount["ungm"])
 
     # Create emoney-2 genesis file
     with open("genesis.json", "w", encoding="utf-8") as exportfile:
         json.dump(genesis, exportfile,
                   indent=2, sort_keys=True, ensure_ascii=False)
+
+    print(get_total_delegated_tokens(genesis), 4998305942006 + 149035995400)
