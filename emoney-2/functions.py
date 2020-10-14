@@ -21,21 +21,21 @@ def new_account(address, account_number):
     }
 
 
-def get_account(address, genesis):
+def get_account(genesis, address):
     for account in genesis["app_state"]["auth"]["accounts"]:
         if account["value"]["address"] == address:
             return account
     return None
 
 
-def get_module_account(name, genesis):
+def get_module_account(genesis, name):
     for account in genesis["app_state"]["auth"]["accounts"]:
         if "name" in account["value"] and account["value"]["name"] == name:
             return account
     return None
 
 
-def update_account(account, genesis):
+def update_account(genesis, account):
     for target in genesis["app_state"]["auth"]["accounts"]:
         if target["value"]["address"] == account["value"]["address"]:
             target = account
@@ -67,9 +67,14 @@ def set_amount(coins, denom, amount):
     )
 
 
-def replace_address(source, destination, genesis):
+def replace_address(genesis, source, destination):
+    if genesis["app_state"]["authority"]["key"] == source:
+        genesis["app_state"]["authority"]["previous_key"] = source
+        genesis["app_state"]["authority"]["key"] = destination
+
     for account in genesis["app_state"]["auth"]["accounts"]:
         if account["value"]["address"] == source:
+            account["value"]["previous_address"] = source
             account["value"]["address"] = destination
 
     for delegator_starting_infos in genesis["app_state"]["distribution"]["delegator_starting_infos"]:
@@ -127,9 +132,7 @@ def next_account_number(genesis):
 
 def migrate_treasury_account(genesis, vesting_start, vesting_end):
     account = get_account(
-        "emoney1cs4323dyzu0wxfj4vc62m8q3xsczfavqx9x3zd", genesis)
-
-    account["_comment"] = "Treasury"
+        genesis, "emoney1skwla4ta9e4y2gzu09rxpk499qyhx6c0gzhuz7")
 
     delegated_amount = get_amount(
         account["value"]["delegated_vesting"], "ungm")
@@ -139,6 +142,7 @@ def migrate_treasury_account(genesis, vesting_start, vesting_end):
     set_amount(account["value"]["coins"], "ungm", coins_amount)
 
     account["value"].update({
+        "name": "Treasury",
         "start_time": str(int(vesting_start.timestamp())),
         "end_time": str(int(vesting_end.timestamp())),
         "original_vesting": [
@@ -146,17 +150,17 @@ def migrate_treasury_account(genesis, vesting_start, vesting_end):
              "denom": "ungm"}
         ]})
 
-    update_account(account, genesis)
+    update_account(genesis, account)
 
 
-def migrate_ecosystem_account(genesis, vesting_start, vesting_end):
-    account = get_account(
-        "emoney14r5rva8qk5ee6rvk5sdtmxea40uf74k7uh4yjv", genesis)
+def migrate_grants_account(genesis, vesting_start, vesting_end):
+    account = get_account(genesis,
+                          "emoney1wnjphcdckph7cmsvlv4pu42u38l7ms88hcrqje")
 
-    account["_comment"] = "Ecosystem Fund (Grants)"
     original_vesting_amount = get_amount(account["value"]["coins"], "ungm")
 
     account["value"].update({
+        "name": "Ecosystem Fund (Grants)",
         "start_time": str(int(vesting_start.timestamp())),
         "end_time": str(int(vesting_end.timestamp())),
         "original_vesting": [
@@ -164,19 +168,18 @@ def migrate_ecosystem_account(genesis, vesting_start, vesting_end):
              "denom": "ungm"}
         ]})
 
-    update_account(account, genesis)
+    update_account(genesis, account)
 
 
 def add_customer_acquisition_account(genesis, vesting_start, vesting_end):
     account = new_account(
-        "TBD", next_account_number(genesis))
-
-    account["_comment"] = "Customer Acquisition"
+        "emoney18lq0d0f4umae59ay5ze5k2rrstgzplftk9cs78", next_account_number(genesis))
 
     original_vesting_amount = 8000000*1000000
 
     account["type"] = "cosmos-sdk/ContinuousVestingAccount"
     account["value"].update({
+        "name": "Customer Acquisition",
         "coins": [
             {"amount": str(original_vesting_amount),
              "denom": "ungm"}
@@ -192,7 +195,7 @@ def add_customer_acquisition_account(genesis, vesting_start, vesting_end):
 
 
 def migrate_liquidity_provisioning_account(genesis, vesting_start, vesting_end):
-    address = "emoney147verqcxwdkgrn663x2qj66zyqc5mu479afw9n"
+    address = "emoney1sd76tmtd08k3nlr6p9s2m9d6lp6pgw72srxka4"
 
     # Get remaining amount
     coins_amount = 100 * 1000000 * 1000000
@@ -204,12 +207,11 @@ def migrate_liquidity_provisioning_account(genesis, vesting_start, vesting_end):
                 account["value"]["coins"], "ungm")
     original_vesting_amount = int(0.95 * coins_amount)
 
-    account = get_account(address, genesis)
-    account["_comment"] = "Liquidity Provisioning"
+    account = get_account(genesis, address)
 
     set_amount(account["value"]["coins"], "ungm", coins_amount)
     account["value"].update({
-        "_hello_world": "yay",
+        "name": "Liquidity Provisioning",
         "start_time": str(int(vesting_start.timestamp())),
         "end_time": str(int(vesting_end.timestamp())),
         "original_vesting": [
@@ -217,7 +219,7 @@ def migrate_liquidity_provisioning_account(genesis, vesting_start, vesting_end):
              "denom": "ungm"}
         ]})
 
-    update_account(account, genesis)
+    update_account(genesis, account)
 
 
 def migrate_seed_round_account(account, purchased_amount, original_vesting_amount, coins_amount, delegated_amount, vesting_start, vesting_end):
@@ -257,6 +259,18 @@ def migrate_seed_round_account(account, purchased_amount, original_vesting_amoun
     return account
 
 
+def replace_addresses(genesis, filename):
+    with open(filename) as csvfile:
+        csv_reader = csv.DictReader(csvfile)
+        for row in csv_reader:
+            description = row["description"]
+            source = row["source"]
+            destination = row["destination"]
+            print(
+                "Replacing \"{0}\" key: {1} -> {2}".format(description, source, destination))
+            replace_address(genesis, source, destination)
+
+
 def migrate_seed_round_accounts(genesis, filename, vesting_start):
     total_amount = 0
     with open(filename) as csvfile:
@@ -270,7 +284,7 @@ def migrate_seed_round_accounts(genesis, filename, vesting_start):
                 round(purchased_amount * 2285000 / 387000))
             total_amount += original_vesting_amount
 
-            account = get_account(address, genesis)
+            account = get_account(genesis, address)
             if account is None:
                 raise ValueError("seed account missing")
 
@@ -280,7 +294,7 @@ def migrate_seed_round_accounts(genesis, filename, vesting_start):
 
             account = migrate_seed_round_account(
                 account, purchased_amount, original_vesting_amount, coins_amount, delegated_amount, vesting_start, vesting_start + datetime.timedelta(days=365))
-            update_account(account, genesis)
+            update_account(genesis, account)
     return total_amount
 
 
@@ -326,7 +340,7 @@ def update_private_sale_accounts(genesis, filename, vesting_start):
             purchased_amount = int(float(row["amount"]) * 1000000)
             total_amount += purchased_amount
 
-            account = get_account(address, genesis)
+            account = get_account(genesis, address)
             if account is None:
                 # print("Delivering private sale tokens to new account: " + address)
                 account = new_account(address, next_account_number(genesis))
@@ -336,7 +350,7 @@ def update_private_sale_accounts(genesis, filename, vesting_start):
 
             account = update_private_sale_account(
                 account, purchased_amount, vesting_start, vesting_start + datetime.timedelta(days=365/2))
-            update_account(account, genesis)
+            update_account(genesis, account)
     return total_amount
 
 
@@ -368,10 +382,10 @@ def get_total_delegated_tokens(genesis):
 def sanity_check(genesis):
     # Verify delegations match the bonded pools
     total_delegated_amount = get_total_delegated_tokens(genesis)
-    bonded_tokens_amount = get_amount(get_module_account(
-        "bonded_tokens_pool", genesis)["value"]["coins"], "ungm")
-    not_bonded_tokens_amount = get_amount(get_module_account(
-        "not_bonded_tokens_pool", genesis)["value"]["coins"], "ungm")
+    bonded_tokens_amount = get_amount(get_module_account(genesis,
+                                                         "bonded_tokens_pool")["value"]["coins"], "ungm")
+    not_bonded_tokens_amount = get_amount(get_module_account(genesis,
+                                                             "not_bonded_tokens_pool")["value"]["coins"], "ungm")
     assert(total_delegated_amount ==
            bonded_tokens_amount + not_bonded_tokens_amount)
 

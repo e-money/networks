@@ -18,13 +18,16 @@ with open("emoney-1.migrated.json") as importfile:
     # Lift non-transferability restriction on NGM
     remove_restricted_denoms(genesis)
 
+    # Key rotation
+    replace_addresses(genesis, "key-rotation.csv")
+
     # Change treasury account to 3 year vesting
     migrate_treasury_account(genesis, genesis_time,
                              genesis_time + datetime.timedelta(days=3*365))
 
     # Change ecosystem account to 3 year vesting
-    migrate_ecosystem_account(genesis, genesis_time,
-                              genesis_time + datetime.timedelta(days=3*365))
+    migrate_grants_account(genesis, genesis_time,
+                           genesis_time + datetime.timedelta(days=3*365))
 
     # Add Customer Acquisition account
     add_customer_acquisition_account(genesis, genesis_time,
