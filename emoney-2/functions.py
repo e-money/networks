@@ -194,7 +194,7 @@ def add_customer_acquisition_account(genesis, vesting_start, vesting_end):
     genesis["app_state"]["auth"]["accounts"].append(account)
 
 
-def migrate_liquidity_provisioning_account(genesis, vesting_start, vesting_end):
+def migrate_liquidity_pool_account(genesis, vesting_start, vesting_end):
     address = "emoney1sd76tmtd08k3nlr6p9s2m9d6lp6pgw72srxka4"
 
     # Get remaining amount
@@ -211,7 +211,7 @@ def migrate_liquidity_provisioning_account(genesis, vesting_start, vesting_end):
 
     set_amount(account["value"]["coins"], "ungm", coins_amount)
     account["value"].update({
-        "name": "Liquidity Provisioning",
+        "name": "Liquidity Pool",
         "start_time": str(int(vesting_start.timestamp())),
         "end_time": str(int(vesting_end.timestamp())),
         "original_vesting": [

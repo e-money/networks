@@ -40,7 +40,7 @@ with open("emoney-1.migrated.json") as importfile:
     update_private_sale_accounts(genesis, "private-sale.csv", genesis_time)
 
     # Adjust Liquidity Provisioning account
-    migrate_liquidity_provisioning_account(
+    migrate_liquidity_pool_account(
         genesis, genesis_time,
         genesis_time + datetime.timedelta(days=365))
 
