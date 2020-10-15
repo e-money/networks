@@ -139,8 +139,9 @@ def migrate_treasury_account(genesis, vesting_start, vesting_end):
 
     original_vesting_amount = 60000000*1000000
     coins_amount = original_vesting_amount - delegated_amount
-    set_amount(account["value"]["coins"], "ungm", coins_amount)
 
+    account["type"] = "cosmos-sdk/ContinuousVestingAccount"
+    set_amount(account["value"]["coins"], "ungm", coins_amount)
     account["value"].update({
         "name": "Treasury",
         "start_time": str(int(vesting_start.timestamp())),
@@ -158,7 +159,7 @@ def migrate_grants_account(genesis, vesting_start, vesting_end):
                           "emoney1a3s4dc3dnk5dqrnlk8ph4qw7q3fnqt2g66fu97")
 
     original_vesting_amount = get_amount(account["value"]["coins"], "ungm")
-
+    account["type"] = "cosmos-sdk/ContinuousVestingAccount"
     account["value"].update({
         "name": "Ecosystem Fund (Grants)",
         "start_time": str(int(vesting_start.timestamp())),
@@ -190,7 +191,6 @@ def add_customer_acquisition_account(genesis, vesting_start, vesting_end):
             {"amount": str(original_vesting_amount),
              "denom": "ungm"}
         ]})
-
     genesis["app_state"]["auth"]["accounts"].append(account)
 
 
@@ -209,6 +209,7 @@ def migrate_liquidity_pool_account(genesis, vesting_start, vesting_end):
 
     account = get_account(genesis, address)
 
+    account["type"] = "cosmos-sdk/ContinuousVestingAccount"
     set_amount(account["value"]["coins"], "ungm", coins_amount)
     account["value"].update({
         "name": "Liquidity Pool",
