@@ -132,7 +132,7 @@ def next_account_number(genesis):
 
 def migrate_treasury_account(genesis, vesting_start, vesting_end):
     account = get_account(
-        genesis, "emoney1skwla4ta9e4y2gzu09rxpk499qyhx6c0gzhuz7")
+        genesis, "emoney1kzrj3tj8xksyj94g72nesw4t33mz8apfsgwsvt")
 
     delegated_amount = get_amount(
         account["value"]["delegated_vesting"], "ungm")
@@ -155,7 +155,7 @@ def migrate_treasury_account(genesis, vesting_start, vesting_end):
 
 def migrate_grants_account(genesis, vesting_start, vesting_end):
     account = get_account(genesis,
-                          "emoney1wnjphcdckph7cmsvlv4pu42u38l7ms88hcrqje")
+                          "emoney1a3s4dc3dnk5dqrnlk8ph4qw7q3fnqt2g66fu97")
 
     original_vesting_amount = get_amount(account["value"]["coins"], "ungm")
 
@@ -195,7 +195,7 @@ def add_customer_acquisition_account(genesis, vesting_start, vesting_end):
 
 
 def migrate_liquidity_pool_account(genesis, vesting_start, vesting_end):
-    address = "emoney1sd76tmtd08k3nlr6p9s2m9d6lp6pgw72srxka4"
+    address = "emoney1q9t7uk9qwzh7n0kqzd55eapypwra8nyyk8ejrt"
 
     # Get remaining amount
     coins_amount = 100 * 1000000 * 1000000

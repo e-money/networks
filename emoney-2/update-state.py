@@ -9,7 +9,8 @@ with open("emoney-1.migrated.json") as importfile:
     genesis = json.load(importfile)
 
     # Update chain-id and genesis time
-    genesis["chain_id"] = "emoney-2"
+    # genesis["chain_id"] = "emoney-2"
+    genesis["chain_id"] = "lilmermaid-6"
     genesis["genesis_time"] = genesis_time.isoformat() + "Z"
 
     # Increase max validators to 50
