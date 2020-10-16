@@ -19,6 +19,9 @@ with open("emoney-1.migrated.json") as importfile:
     # Lift non-transferability restriction on NGM
     remove_restricted_denoms(genesis)
 
+    # Set NGM inflation to 10%
+    set_ngm_inflation(genesis)
+
     # Key rotation
     replace_addresses(genesis, "key-rotation.csv")
 

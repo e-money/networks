@@ -8,6 +8,15 @@ def remove_restricted_denoms(genesis):
     genesis["app_state"]["authority"]["restricted_denoms"] = []
 
 
+def set_ngm_inflation(genesis):
+    genesis["app_state"]["inflation"]["assets"]["assets"].append(
+        {
+            "accum": "0.000000000000000000",
+            "denom": "ungm",
+            "inflation": "0.100000000000000000"
+        })
+
+
 def new_account(address, account_number):
     return {
         "type": "cosmos-sdk/Account",
@@ -228,12 +237,15 @@ def migrate_liquidity_pool_account(genesis, vesting_start, vesting_end):
     update_account(genesis, account)
 
 
-def migrate_seed_round_account(account, purchased_amount, original_vesting_amount, coins_amount, delegated_amount, vesting_start, vesting_end):
+def migrate_seed_round_account(account, purchased_amount, coins_amount, delegated_amount, vesting_start, vesting_end):
     # coins_amount + delegated_vesting_amount + delegated_free_amount = total account balance
     total_amount = coins_amount + delegated_amount
     shift_amount = total_amount - purchased_amount
 
-    account["_comment"] = "Seed Migration: purchased_amount: {0}, total_amount: {1}, coins_amount: {2}, delegated_amount: {3}, shift_amount: {4}".format(
+    original_vesting_amount = int(
+        round(purchased_amount * 2285000 / 387000))
+
+    account["_comment_sm"] = "Seed Migration: purchased_amount: {0}, total_amount: {1}, coins_amount: {2}, delegated_amount: {3}, shift_amount: {4}".format(
         purchased_amount, total_amount, coins_amount, delegated_amount, shift_amount)
 
     delegated_vesting_amount = min(delegated_amount, purchased_amount)
@@ -241,9 +253,7 @@ def migrate_seed_round_account(account, purchased_amount, original_vesting_amoun
 
     total_amount = original_vesting_amount + shift_amount
     coins_amount = total_amount - delegated_free_amount - delegated_vesting_amount
-
-    # account["_1_b_seed_migration"] = "original_vesting_amount: {0}, total_amount: {1}, coins_amount: {2}, delegated_vesting_amount: {3}, delegated_free_amount: {4}".format(
-    #     original_vesting_amount, total_amount, coins_amount, delegated_vesting_amount, delegated_free_amount)
+    original_vesting_amount = min(total_amount, original_vesting_amount)
 
     if coins_amount < 0 or delegated_vesting_amount < 0 or delegated_free_amount < 0 or original_vesting_amount < 0:
         raise ValueError("negative amount")
@@ -278,7 +288,6 @@ def replace_addresses(genesis, filename):
 
 
 def migrate_seed_round_accounts(genesis, filename, vesting_start):
-    total_amount = 0
     with open(filename) as csvfile:
         csv_reader = csv.DictReader(csvfile)
         for row in csv_reader:
@@ -286,9 +295,6 @@ def migrate_seed_round_accounts(genesis, filename, vesting_start):
 
             # Original purchased amount as ungm
             purchased_amount = int(float(row["amount"]) * 1000000)
-            original_vesting_amount = int(
-                round(purchased_amount * 2285000 / 387000))
-            total_amount += original_vesting_amount
 
             account = get_account(genesis, address)
             if account is None:
@@ -299,9 +305,8 @@ def migrate_seed_round_accounts(genesis, filename, vesting_start):
                 account["value"]["address"], genesis)
 
             account = migrate_seed_round_account(
-                account, purchased_amount, original_vesting_amount, coins_amount, delegated_amount, vesting_start, vesting_start + datetime.timedelta(days=365))
+                account, purchased_amount, coins_amount, delegated_amount, vesting_start, vesting_start + datetime.timedelta(days=365))
             update_account(genesis, account)
-    return total_amount
 
 
 def update_private_sale_account(account, purchased_amount, vesting_start, vesting_end):
@@ -309,7 +314,7 @@ def update_private_sale_account(account, purchased_amount, vesting_start, vestin
     unlocked_amount = int(round(0.20 * purchased_amount))
     vesting_amount = purchased_amount - unlocked_amount
 
-    account["_comment"] = "Private Sale Delivery: purchased_amount: {0}, unlocked_amount: {1}, vesting_amount: {2}".format(
+    account["_comment_psd"] = "Private Sale Delivery: purchased_amount: {0}, unlocked_amount: {1}, vesting_amount: {2}".format(
         purchased_amount, unlocked_amount, vesting_amount)
 
     # Consider existing amounts
@@ -336,7 +341,6 @@ def update_private_sale_account(account, purchased_amount, vesting_start, vestin
 
 
 def update_private_sale_accounts(genesis, filename, vesting_start):
-    total_amount = 0
     with open(filename) as csvfile:
         csv_reader = csv.DictReader(csvfile)
         for row in csv_reader:
@@ -344,7 +348,6 @@ def update_private_sale_accounts(genesis, filename, vesting_start):
 
             # Purchased amount as ungm
             purchased_amount = int(float(row["amount"]) * 1000000)
-            total_amount += purchased_amount
 
             account = get_account(genesis, address)
             if account is None:
@@ -357,7 +360,6 @@ def update_private_sale_accounts(genesis, filename, vesting_start):
             account = update_private_sale_account(
                 account, purchased_amount, vesting_start, vesting_start + datetime.timedelta(days=365/2))
             update_account(genesis, account)
-    return total_amount
 
 
 def get_spendable_amount(genesis):
