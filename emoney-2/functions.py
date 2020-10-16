@@ -72,6 +72,11 @@ def replace_address(genesis, source, destination):
         genesis["app_state"]["authority"]["previous_key"] = source
         genesis["app_state"]["authority"]["key"] = destination
 
+    for account in genesis["app_state"]["liquidityprovider"]["accounts"]:
+        if account["address"] == source:
+            account["previous_address"] = source
+            account["address"] = destination
+
     for account in genesis["app_state"]["auth"]["accounts"]:
         if account["value"]["address"] == source:
             account["value"]["previous_address"] = source
@@ -355,6 +360,32 @@ def update_private_sale_accounts(genesis, filename, vesting_start):
     return total_amount
 
 
+def get_spendable_amount(genesis):
+    total_amount = 0
+    for account in genesis["app_state"]["auth"]["accounts"]:
+        if "name" in account["value"]:
+            if account["value"]["name"] == "bonded_tokens_pool" or account["value"]["name"] == "not_bonded_tokens_pool":
+                continue
+        coins_amount = 0
+        original_vesting_amount = 0
+        delegated_vesting_amount = 0
+        if "coins" in account["value"]:
+            coins_amount = get_amount(
+                account["value"]["coins"], "ungm")
+        if "delegated_vesting" in account["value"]:
+            delegated_vesting_amount = get_amount(
+                account["value"]["delegated_vesting"], "ungm")
+        if "original_vesting" in account["value"]:
+            original_vesting_amount = get_amount(
+                account["value"]["original_vesting"], "ungm")
+        spendable_amount = min(
+            coins_amount + delegated_vesting_amount - original_vesting_amount, coins_amount)
+        if(spendable_amount < 0):
+            print(spendable_amount, account["value"]["address"])
+        total_amount += spendable_amount
+    return total_amount
+
+
 def get_total_coins_amount(genesis):
     total_coins_amount = {}
     for account in genesis["app_state"]["auth"]["accounts"]:
@@ -394,3 +425,7 @@ def sanity_check(genesis):
     total_coins_amount = get_total_coins_amount(genesis)
     assert(total_coins_amount["ungm"] == 100000000 * 1000000)
     print("Total supply:", total_coins_amount)
+
+    # Verify total vested amount
+    spendable_amount = get_spendable_amount(genesis)
+    print("Spendable amount: ", spendable_amount)
