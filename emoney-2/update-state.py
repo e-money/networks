@@ -40,8 +40,8 @@ with open("emoney-1.migrated.json") as importfile:
     # Change allocation for seed round participants and introduce vesting
     migrate_seed_round_accounts(genesis, "seed-round.csv", genesis_time)
 
-    # Deliver tokens to private sale participants
-    update_private_sale_accounts(genesis, "private-sale.csv", genesis_time)
+    # Deliver tokens to vesting accounts
+    update_vesting_accounts(genesis, "vesting.csv", genesis_time)
 
     # Adjust Liquidity Provisioning account
     migrate_liquidity_pool_account(

@@ -146,7 +146,7 @@ def next_account_number(genesis):
 
 def migrate_treasury_account(genesis, vesting_start, vesting_end):
     account = get_account(
-        genesis, "emoney1kzrj3tj8xksyj94g72nesw4t33mz8apfsgwsvt")
+        genesis, "emoney14khem97ysq754nar9t4xws2wt4pzfvmavk9c3d")
 
     delegated_amount = get_amount(
         account["value"]["delegated_vesting"], "ungm")
@@ -309,12 +309,8 @@ def migrate_seed_round_accounts(genesis, filename, vesting_start):
             update_account(genesis, account)
 
 
-def update_private_sale_account(account, purchased_amount, vesting_start, vesting_end):
-    # 20% unlocked, 80% vesting for 6 months
-    unlocked_amount = int(round(0.20 * purchased_amount))
-    vesting_amount = purchased_amount - unlocked_amount
-
-    account["_comment_psd"] = "Private Sale Delivery: purchased_amount: {0}, unlocked_amount: {1}, vesting_amount: {2}".format(
+def update_vesting_account(account, purchased_amount, unlocked_amount, vesting_amount, vesting_start, vesting_end):
+    account["_comment_vesting"] = "Vesting Delivery: purchased_amount: {0}, unlocked_amount: {1}, vesting_amount: {2}".format(
         purchased_amount, unlocked_amount, vesting_amount)
 
     # Consider existing amounts
@@ -340,7 +336,7 @@ def update_private_sale_account(account, purchased_amount, vesting_start, vestin
     return account
 
 
-def update_private_sale_accounts(genesis, filename, vesting_start):
+def update_vesting_accounts(genesis, filename, vesting_start):
     with open(filename) as csvfile:
         csv_reader = csv.DictReader(csvfile)
         for row in csv_reader:
@@ -348,6 +344,10 @@ def update_private_sale_accounts(genesis, filename, vesting_start):
 
             # Purchased amount as ungm
             purchased_amount = int(float(row["amount"]) * 1000000)
+
+            unlocked_amount = int(
+                round(float(row["unlocked"]) * purchased_amount))
+            vesting_amount = purchased_amount - unlocked_amount
 
             account = get_account(genesis, address)
             if account is None:
@@ -357,8 +357,8 @@ def update_private_sale_accounts(genesis, filename, vesting_start):
             # else:
             #     print("Delivering private sale tokens to existing account: " + address)
 
-            account = update_private_sale_account(
-                account, purchased_amount, vesting_start, vesting_start + datetime.timedelta(days=365/2))
+            account = update_vesting_account(
+                account, purchased_amount, unlocked_amount, vesting_amount, vesting_start, vesting_start + datetime.timedelta(days=float(row["vesting_days"])))
             update_account(genesis, account)
 
 
