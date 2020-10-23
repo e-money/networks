@@ -7,7 +7,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] ATEAM
 * [ ] B-Harvest
 * [x] BasBlock
-* [ ] Bit Cat🐱
+* [x] Bit Cat🐱
 * [ ] Block Producer
 * [ ] blockscape
 * [ ] ChainLayer
@@ -17,7 +17,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Dokia Capital
 * [ ] Easy 2 Stake
 * [ ] Figment Networks
-* [ ] Forbole
+* [x] Forbole
 * [ ] HashQuark
 * [ ] InchainWorks
 * [x] Inotel
