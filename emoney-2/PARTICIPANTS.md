@@ -4,7 +4,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 
 **Validators participating in the upgrade:**
 * [x] 01node
-* [ ] ATEAM
+* [x] ATEAM
 * [ ] B-Harvest
 * [ ] BasBlock
 * [ ] Bit Cat🐱
@@ -23,24 +23,24 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Inotel
 * [ ] IRISnet-Bianjie
 * [ ] iwval
-* [ ] KalpaTech
+* [x] KalpaTech
 * [ ] kytzu
 * [ ] Mars
 * [ ] melea
 * [ ] mintonium
-* [ ] Mr.K
+* [x] Mr.K
 * [ ] Newroad Network
-* [ ] Nodeasy.com
+* [x] Nodeasy.com
 * [ ] Northern stake
 * [ ] novy
-* [ ] retz80
+* [x] retz80
 * [ ] Simply Staking
 * [ ] stake.systems
 * [ ] stake.zone
 * [ ] Stake5 Labs
 * [ ] stakewolf
 * [ ] Stakin
-* [ ] syncnode
+* [x] syncnode
 * [ ] UbikCapital
 * [ ] WeStaking
 * [x] Witval
