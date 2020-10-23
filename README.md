@@ -6,11 +6,18 @@ If you intend to run a validator, please join our [validator hangout group](http
 
 Grants are available for [eligible validators](https://github.com/e-money/grants/).
 
+## Next Network
+
+The upgrade to chain-id "emoney-2" is scheduled for 2020-11-04 at 13:00:00 UTC.
+
+Please see [emoney-2/README.md](emoney-2/README.md) for the latest instructions on preparing for the upgrade.
+
+
 ## Current Network
 
 Chain ID: emoney-1  
 Genesis:  https://raw.githubusercontent.com/e-money/launch/master/emoney-1/genesis.json  
-Software: [v0.6.1](https://github.com/e-money/em-ledger/releases/tag/v0.6.1)  
+Software: [v0.6.5](https://github.com/e-money/em-ledger/releases/tag/v0.6.5)  
 Token API: https://api.e-money.com/v1/tokens.json  
 Explorer: https://e-money.network  
 
