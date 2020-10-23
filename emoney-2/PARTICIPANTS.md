@@ -20,7 +20,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Forbole
 * [ ] HashQuark
 * [ ] InchainWorks
-* [ ] Inotel
+* [x] Inotel
 * [ ] IRISnet-Bianjie
 * [ ] iwval
 * [x] KalpaTech
