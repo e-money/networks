@@ -6,7 +6,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] 01node
 * [x] ATEAM
 * [ ] B-Harvest
-* [ ] BasBlock
+* [x] BasBlock
 * [ ] Bit Cat🐱
 * [ ] Block Producer
 * [ ] blockscape
@@ -20,11 +20,11 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Forbole
 * [ ] HashQuark
 * [ ] InchainWorks
-* [ ] Inotel
+* [x] Inotel
 * [ ] IRISnet-Bianjie
 * [ ] iwval
 * [x] KalpaTech
-* [ ] kytzu
+* [x] kytzu
 * [ ] Mars
 * [ ] melea
 * [ ] mintonium
@@ -32,16 +32,16 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Newroad Network
 * [x] Nodeasy.com
 * [ ] Northern stake
-* [ ] novy
+* [x] novy
 * [x] retz80
-* [ ] Simply Staking
+* [x] Simply Staking
 * [ ] stake.systems
 * [ ] stake.zone
 * [ ] Stake5 Labs
 * [ ] stakewolf
 * [ ] Stakin
 * [x] syncnode
-* [ ] UbikCapital
+* [x] UbikCapital
 * [x] WeStaking
 * [x] Witval
 * [x] validator.network
