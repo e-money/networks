@@ -190,7 +190,7 @@ def add_customer_acquisition_account(genesis, vesting_start, vesting_end):
     account = new_account(
         "emoney18lq0d0f4umae59ay5ze5k2rrstgzplftk9cs78", next_account_number(genesis))
 
-    original_vesting_amount = 8000000*1000000
+    original_vesting_amount = 8300000*1000000
 
     account["type"] = "cosmos-sdk/ContinuousVestingAccount"
     account["value"].update({
