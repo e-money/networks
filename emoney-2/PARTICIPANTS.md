@@ -36,7 +36,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] retz80
 * [x] Simply Staking
 * [ ] stake.systems
-* [ ] stake.zone
+* [x] stake.zone
 * [ ] Stake5 Labs
 * [ ] stakewolf
 * [ ] Stakin
