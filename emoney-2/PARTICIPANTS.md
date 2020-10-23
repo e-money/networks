@@ -42,6 +42,6 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Stakin
 * [x] syncnode
 * [ ] UbikCapital
-* [ ] WeStaking
+* [x] WeStaking
 * [x] Witval
 * [x] validator.network
