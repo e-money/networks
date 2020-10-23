@@ -6,7 +6,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] 01node
 * [x] ATEAM
 * [ ] B-Harvest
-* [ ] BasBlock
+* [x] BasBlock
 * [ ] Bit Cat🐱
 * [ ] Block Producer
 * [ ] blockscape
