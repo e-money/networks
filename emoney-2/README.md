@@ -2,6 +2,7 @@
 
 * Install [em-ledger v0.6.5](https://github.com/e-money/em-ledger/tree/v0.6.5) binaries
 * Restart emd with `--halt-time 1604494800` to stop the emoney-1 chain on 2020-11-04 at 13:00:00 UTC
+* Signal readiness in [PARTICIPANTS.md](PARTICIPANTS.md)
 
 # Generating genesis.json for emoney-2
 
