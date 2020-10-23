@@ -24,7 +24,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] IRISnet-Bianjie
 * [ ] iwval
 * [x] KalpaTech
-* [ ] kytzu
+* [x] kytzu
 * [ ] Mars
 * [ ] melea
 * [ ] mintonium
