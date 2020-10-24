@@ -27,7 +27,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] kytzu
 * [ ] Mars
 * [x] melea
-* [ ] mintonium
+* [x] mintonium
 * [x] Mr.K
 * [ ] Newroad Network
 * [x] Nodeasy.com
@@ -35,7 +35,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] novy
 * [x] retz80
 * [x] Simply Staking
-* [ ] stake.systems
+* [x] stake.systems
 * [x] stake.zone
 * [ ] Stake5 Labs
 * [x] stakewolf
