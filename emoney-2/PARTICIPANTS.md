@@ -10,7 +10,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] Bit Cat🐱
 * [ ] Block Producer
 * [ ] blockscape
-* [ ] ChainLayer
+* [x] ChainLayer
 * [ ] Cosmostation
 * [ ] Cryptium Labs
 * [ ] DCC Capital
