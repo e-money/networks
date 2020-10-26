@@ -29,7 +29,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] melea
 * [x] mintonium
 * [x] Mr.K
-* [ ] Newroad Network
+* [x] Newroad Network
 * [x] Nodeasy.com
 * [ ] Northern stake
 * [x] novy
