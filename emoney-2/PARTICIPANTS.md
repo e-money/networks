@@ -19,10 +19,10 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Figment Networks
 * [x] Forbole
 * [ ] HashQuark
-* [ ] InchainWorks
+* [x] InchainWorks
 * [x] Inotel
 * [ ] IRISnet-Bianjie
-* [ ] iwval
+* [x] iwval
 * [x] KalpaTech
 * [x] kytzu
 * [ ] Mars
