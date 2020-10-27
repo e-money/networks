@@ -31,7 +31,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] Mr.K
 * [x] Newroad Network
 * [x] Nodeasy.com
-* [ ] Northern stake
+* [x] Northern stake
 * [x] novy
 * [x] retz80
 * [x] Simply Staking
