@@ -8,7 +8,7 @@
 
 * Make sure you followed the preparation steps above
 * Run `emd export --home <emoney-home> --for-zero-height > emoney-1.export.json`
-* Install [em-ledger v0.7.0](https://github.com/e-money/em-ledger/tree/v0.7.0)
+* Install [em-ledger v0.8.0](https://github.com/e-money/em-ledger/tree/v0.8.0)
 * Be aware that you will need to migrate the keychain: `emcli keys migrate`
 * Run `emd migrate emoney-1.export.json > emoney-1.migrated.json`
 * Run the state migration script `python3 update-state.py` which generates `genesis.json`
