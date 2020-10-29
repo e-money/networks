@@ -2,7 +2,10 @@ import json
 import datetime
 from functions import *
 
-genesis_time = datetime.datetime.utcnow()
+# genesis_time = datetime.datetime.utcnow()
+
+# Halt time for emoney-1 chain on 2020-11-04 at 13:00:00 UTC
+genesis_time = datetime.datetime(2020, 11, 4, 13, 00, 00)
 
 with open("emoney-1.migrated.json") as importfile:
     # Load emoney-1 export file
