@@ -9,7 +9,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] BasBlock
 * [x] Bit Cat🐱
 * [ ] Block Producer
-* [ ] blockscape
+* [x] blockscape
 * [x] ChainLayer
 * [ ] Cosmostation
 * [ ] Cryptium Labs
