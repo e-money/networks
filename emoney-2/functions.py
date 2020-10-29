@@ -146,12 +146,12 @@ def next_account_number(genesis):
 
 def migrate_treasury_account(genesis, vesting_start, vesting_end):
     account = get_account(
-        genesis, "emoney14khem97ysq754nar9t4xws2wt4pzfvmavk9c3d")
+        genesis, "emoney1cpfn66xumevrx755m4qxgezw9j5s86qkan5ch8")
 
     delegated_amount = get_amount(
         account["value"]["delegated_vesting"], "ungm")
 
-    original_vesting_amount = 60000000*1000000
+    original_vesting_amount = 60000000 * 1000000
     coins_amount = original_vesting_amount - delegated_amount
 
     account["type"] = "cosmos-sdk/ContinuousVestingAccount"
@@ -170,7 +170,7 @@ def migrate_treasury_account(genesis, vesting_start, vesting_end):
 
 def migrate_grants_account(genesis, vesting_start, vesting_end):
     account = get_account(genesis,
-                          "emoney1a3s4dc3dnk5dqrnlk8ph4qw7q3fnqt2g66fu97")
+                          "emoney13dpmrp5sppqdrkry6jyy8clj3ts0923n6wqgng")
 
     original_vesting_amount = get_amount(account["value"]["coins"], "ungm")
     account["type"] = "cosmos-sdk/ContinuousVestingAccount"
@@ -188,9 +188,9 @@ def migrate_grants_account(genesis, vesting_start, vesting_end):
 
 def add_customer_acquisition_account(genesis, vesting_start, vesting_end):
     account = new_account(
-        "emoney18lq0d0f4umae59ay5ze5k2rrstgzplftk9cs78", next_account_number(genesis))
+        "emoney12lceurdvgj0qr4kldwakjc8cvap6t4049jwtmc", next_account_number(genesis))
 
-    original_vesting_amount = 8300000*1000000
+    original_vesting_amount = 8300000 * 1000000
 
     account["type"] = "cosmos-sdk/ContinuousVestingAccount"
     account["value"].update({
@@ -209,7 +209,7 @@ def add_customer_acquisition_account(genesis, vesting_start, vesting_end):
 
 
 def migrate_liquidity_pool_account(genesis, vesting_start, vesting_end):
-    address = "emoney1q9t7uk9qwzh7n0kqzd55eapypwra8nyyk8ejrt"
+    address = "emoney15k9l4q5wpg296eczwq8m24fav60yp6gc4gtjln"
 
     # Get remaining amount
     coins_amount = 100 * 1000000 * 1000000
@@ -425,7 +425,7 @@ def sanity_check(genesis):
 
     # Verify total supply of 100M NGM
     total_coins_amount = get_total_coins_amount(genesis)
-    assert(total_coins_amount["ungm"] == 100000000 * 1000000)
+    assert(total_coins_amount["ungm"] == 100 * 1000000 * 1000000)
     print("Total supply:", total_coins_amount)
 
     # Verify total vested amount
