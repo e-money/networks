@@ -2,18 +2,20 @@ import json
 import datetime
 from functions import *
 
-# genesis_time = datetime.datetime.utcnow()
-
-# Halt time for emoney-1 chain on 2020-11-04 at 13:00:00 UTC
+# emoney-2 settings
 genesis_time = datetime.datetime(2020, 11, 4, 13, 00, 00)
+chain_id = "emoney-2"
+
+# lilmermaid-7 settings
+# genesis_time = datetime.datetime.utcnow()
+# chain_id = "lilmermaid-7"
 
 with open("emoney-1.migrated.json") as importfile:
     # Load emoney-1 export file
     genesis = json.load(importfile)
 
     # Update chain-id and genesis time
-    # genesis["chain_id"] = "emoney-2"
-    genesis["chain_id"] = "lilmermaid-6"
+    genesis["chain_id"] = chain_id
     genesis["genesis_time"] = genesis_time.isoformat() + "Z"
 
     # Increase max validators to 50
