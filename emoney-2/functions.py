@@ -219,7 +219,10 @@ def migrate_liquidity_pool_account(genesis, vesting_start, vesting_end):
         if account["value"]["address"] != address:
             coins_amount -= get_amount(
                 account["value"]["coins"], "ungm")
-    original_vesting_amount = int(0.95 * coins_amount)
+
+    reservation_amount = 600000 * 1000000   # Initial exchange float
+    reservation_amount += 300000 * 1000000  # Public sale
+    original_vesting_amount = coins_amount - reservation_amount
 
     account = get_account(genesis, address)
 
@@ -428,6 +431,6 @@ def sanity_check(genesis):
     assert(total_coins_amount["ungm"] == 100 * 1000000 * 1000000)
     print("Total supply:", total_coins_amount)
 
-    # Verify total vested amount
+    # Print total spendable amount
     spendable_amount = get_spendable_amount(genesis)
-    print("Spendable amount: ", spendable_amount)
+    print("Spendable amount:", spendable_amount)
