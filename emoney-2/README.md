@@ -1,6 +1,6 @@
 # Preparing for emoney-1 upgrade
 
-* Install [em-ledger v0.6.5](https://github.com/e-money/em-ledger/tree/v0.6.5) binaries
+* Install [em-ledger v0.6.7](https://github.com/e-money/em-ledger/releases/tag/v0.6.7) binaries
 * Restart emd with `--halt-time 1604494800` to stop the emoney-1 chain on 2020-11-04 at 13:00:00 UTC
 * Signal readiness in [PARTICIPANTS.md](PARTICIPANTS.md)
 
