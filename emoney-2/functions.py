@@ -99,18 +99,20 @@ def replace_address(genesis, source, destination):
         if delegation["delegator_address"] == source:
             delegation["delegator_address"] = destination
 
-    for unbonding_delegation in genesis["app_state"]["staking"]["unbonding_delegations"]:
-        if unbonding_delegation["delegator_address"] == source:
-            unbonding_delegation["delegator_address"] = destination
+    if genesis["app_state"]["staking"]["unbonding_delegations"] != None:
+        for unbonding_delegation in genesis["app_state"]["staking"]["unbonding_delegations"]:
+            if unbonding_delegation["delegator_address"] == source:
+                unbonding_delegation["delegator_address"] = destination
 
 
 def get_unbonding_amount(delegator_address, validator_address, genesis):
-    for unbonding_delegation in genesis["app_state"]["staking"]["unbonding_delegations"]:
-        if unbonding_delegation["delegator_address"] == delegator_address and unbonding_delegation["validator_address"] == validator_address:
-            total_unbonding_amount = 0
-            for entry in unbonding_delegation["entries"]:
-                total_unbonding_amount += int(entry["balance"])
-            return total_unbonding_amount
+    if genesis["app_state"]["staking"]["unbonding_delegations"] != None:
+        for unbonding_delegation in genesis["app_state"]["staking"]["unbonding_delegations"]:
+            if unbonding_delegation["delegator_address"] == delegator_address and unbonding_delegation["validator_address"] == validator_address:
+                total_unbonding_amount = 0
+                for entry in unbonding_delegation["entries"]:
+                    total_unbonding_amount += int(entry["balance"])
+                return total_unbonding_amount
     return 0
 
 
