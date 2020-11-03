@@ -11,7 +11,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Block Producer
 * [x] blockscape
 * [x] ChainLayer
-* [ ] Cosmostation
+* [x] Cosmostation
 * [ ] Cryptium Labs
 * [ ] DCC Capital
 * [x] Dokia Capital
