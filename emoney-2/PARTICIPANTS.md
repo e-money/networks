@@ -39,7 +39,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] stake.zone
 * [ ] Stake5 Labs
 * [x] stakewolf
-* [ ] Stakin
+* [x] Stakin
 * [x] syncnode
 * [x] UbikCapital
 * [x] WeStaking
