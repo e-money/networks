@@ -21,7 +21,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] HashQuark
 * [x] InchainWorks
 * [x] Inotel
-* [ ] IRISnet-Bianjie
+* [x] IRISnet-Bianjie
 * [x] iwval
 * [x] KalpaTech
 * [x] kytzu
