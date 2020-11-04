@@ -6,9 +6,9 @@ from functions import *
 genesis_time = datetime.datetime(2020, 11, 4, 13, 00, 00)
 chain_id = "emoney-2"
 
-# lilmermaid-7 settings
+# lilmermaid-8 settings
 # genesis_time = datetime.datetime.utcnow()
-# chain_id = "lilmermaid-7"
+# chain_id = "lilmermaid-8"
 
 with open("emoney-1.migrated.json") as importfile:
     # Load emoney-1 export file
