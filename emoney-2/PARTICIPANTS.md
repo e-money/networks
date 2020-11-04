@@ -12,7 +12,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] blockscape
 * [x] ChainLayer
 * [x] Cosmostation
-* [ ] Cryptium Labs
+* [x] Cryptium Labs
 * [ ] DCC Capital
 * [x] Dokia Capital
 * [ ] Easy 2 Stake
