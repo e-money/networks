@@ -16,7 +16,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] DCC Capital
 * [x] Dokia Capital
 * [ ] Easy 2 Stake
-* [ ] Figment Networks
+* [x] Figment Networks
 * [x] Forbole
 * [ ] HashQuark
 * [x] InchainWorks
