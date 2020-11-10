@@ -11,17 +11,17 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Block Producer
 * [x] blockscape
 * [x] ChainLayer
-* [ ] Cosmostation
-* [ ] Cryptium Labs
+* [x] Cosmostation
+* [x] Cryptium Labs
 * [ ] DCC Capital
 * [x] Dokia Capital
-* [ ] Easy 2 Stake
-* [ ] Figment Networks
+* [x] Easy 2 Stake
+* [x] Figment Networks
 * [x] Forbole
 * [ ] HashQuark
 * [x] InchainWorks
 * [x] Inotel
-* [ ] IRISnet-Bianjie
+* [x] IRISnet-Bianjie
 * [x] iwval
 * [x] KalpaTech
 * [x] kytzu
@@ -39,7 +39,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] stake.zone
 * [ ] Stake5 Labs
 * [x] stakewolf
-* [ ] Stakin
+* [x] Stakin
 * [x] syncnode
 * [x] UbikCapital
 * [x] WeStaking
