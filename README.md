@@ -15,9 +15,9 @@ Please see [emoney-2/README.md](emoney-2/README.md) for the latest instructions 
 
 ## Current Network
 
-Chain ID: emoney-1  
-Genesis:  https://raw.githubusercontent.com/e-money/launch/master/emoney-1/genesis.json  
-Software: [v0.6.7](https://github.com/e-money/em-ledger/releases/tag/v0.6.7)  
+Chain ID: emoney-2  
+Genesis:  https://raw.githubusercontent.com/e-money/launch/master/emoney-2/genesis.json  
+Software: [v0.9.1](https://github.com/e-money/em-ledger/releases/tag/v0.9.1)  
 Token API: https://api.e-money.com/v1/tokens.json  
 Explorer: https://e-money.network  
 
