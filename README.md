@@ -17,7 +17,7 @@ Please see [emoney-2/README.md](emoney-2/README.md) for the latest instructions 
 
 Chain ID: emoney-2  
 Genesis:  https://raw.githubusercontent.com/e-money/launch/master/emoney-2/genesis.json  
-Software: [v0.9.1](https://github.com/e-money/em-ledger/releases/tag/v0.9.1)  
+Software: [v0.9.6](https://github.com/e-money/em-ledger/releases/tag/v0.9.6)  
 Token API: https://api.e-money.com/v1/tokens.json  
 Explorer: https://e-money.network  
 
@@ -37,6 +37,15 @@ ab46e93f949e3ae794360536cce001a7fe74ace1@116.202.196.217:46656
 7b84885ebe5bdf0a36289d87dd9b367223e9736f@165.22.167.234:21656
 # ATEAM
 226d713acb10a1cd09b3b890406b886d7b071cf2@54.151.46.53:26656
+# Dual Stacking [seed-mode enabled]
+4664f0fcc86d75f7f11544839139d7b8d33aab55@seed.emoney-2.dual.systems:26656
+```
+
+## Public RPC
+
+```
+# Dual Stacking
+rpc.emoney-2.dual.systems:26657
 ```
 
 Validators are encouraged to create a PR and add their nodes above.
