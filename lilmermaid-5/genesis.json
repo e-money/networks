@@ -1,0 +1,241 @@
+{
+  "app_hash": "",
+  "app_state": {
+    "accounts": [
+      {
+        "_comment": "e-Money A/S",
+        "account_number": "0",
+        "address": "emoney1j7sq6dadld46vruk92r0se0tv0f3uc4pvl4ntd",
+        "coins": [
+          {
+            "amount": "65000000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "1672574400",
+        "module_name": "",
+        "module_permissions": [],
+        "original_vesting": [
+          {
+            "amount": "50000000000000",
+            "denom": "ungm"
+          }
+        ],
+        "sequence_number": "0",
+        "start_time": "1577880000"
+      },
+      {
+        "_comment": "Community Sale",
+        "account_number": "0",
+        "address": "emoney1mxj9pml6lc6tcxsvph39ra4us8nafglrfa0c3r",
+        "coins": [
+          {
+            "amount": "25000000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "_comment": "Ecosystem Fund",
+        "account_number": "0",
+        "address": "emoney1gzp549tt97nrmyc0c7035c944m0nuh26fjxge4",
+        "coins": [
+          {
+            "_comment": "10M NGM minus testnet rewards",
+            "amount": "9989000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      },
+      {
+        "_comment": "validator.network",
+        "account_number": "0",
+        "address": "emoney1fj76mrfpcwm7yqlmfqkqlx9kgvjns97c5f0403",
+        "coins": [
+          {
+            "amount": "11000000000",
+            "denom": "ungm"
+          }
+        ],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null,
+        "original_vesting": [],
+        "sequence_number": "0",
+        "start_time": "0"
+      }
+    ],
+    "auth": {
+      "params": {
+        "max_memo_characters": "256",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10"
+      }
+    },
+    "authority": {
+      "key": "emoney16j4trwyg8a3pfwqu2ely96tkzl05eh4vvyyfts",
+      "restricted_denoms": [
+        {
+          "Denom": "ungm",
+          "Allowed": [
+            "emoney1j7sq6dadld46vruk92r0se0tv0f3uc4pvl4ntd",
+            "emoney1mxj9pml6lc6tcxsvph39ra4us8nafglrfa0c3r",
+            "emoney1gzp549tt97nrmyc0c7035c944m0nuh26fjxge4"
+          ]
+        }
+      ]
+    },
+    "bank": {
+      "send_enabled": true
+    },
+    "distribution": {
+      "base_proposer_reward": "0.010000000000000000",
+      "bonus_proposer_reward": "0.040000000000000000",
+      "community_tax": "0.000000000000000000",
+      "delegator_starting_infos": [],
+      "delegator_withdraw_infos": [],
+      "fee_pool": {
+        "community_pool": []
+      },
+      "outstanding_rewards": [],
+      "previous_proposer": "",
+      "validator_accumulated_commissions": [],
+      "validator_current_rewards": [],
+      "validator_historical_rewards": [],
+      "validator_slash_events": [],
+      "withdraw_addr_enabled": true
+    },
+    "genutil": {
+      "gentxs": [
+        {
+          "type": "cosmos-sdk/StdTx",
+          "value": {
+            "fee": {
+              "amount": [],
+              "gas": "200000"
+            },
+            "memo": "6ffb1e450a9efed17aead62a4dd9e453e2ee5c4d@3.123.252.230:26656",
+            "msg": [
+              {
+                "type": "cosmos-sdk/MsgCreateValidator",
+                "value": {
+                  "commission": {
+                    "max_change_rate": "1.000000000000000000",
+                    "max_rate": "1.000000000000000000",
+                    "rate": "0.100000000000000000"
+                  },
+                  "delegator_address": "emoney1fj76mrfpcwm7yqlmfqkqlx9kgvjns97c5f0403",
+                  "description": {
+                    "details": "Highly resilient and secure validator operating out of Northern Europe. See website for terms of service.",
+                    "identity": "357F80896B3311B4",
+                    "moniker": "validator.network",
+                    "website": "https://validator.network"
+                  },
+                  "min_self_delegation": "1000000",
+                  "pubkey": "emoneyvalconspub1zcjduepqr7pgxa2nufp3lz4rclqf776nhky8va0nxk42atn0c49ytrxqv6mqsxpf65",
+                  "validator_address": "emoneyvaloper1fj76mrfpcwm7yqlmfqkqlx9kgvjns97cnffp3u",
+                  "value": {
+                    "amount": "10000000000",
+                    "denom": "ungm"
+                  }
+                }
+              }
+            ],
+            "signatures": [
+              {
+                "pub_key": {
+                  "type": "tendermint/PubKeySecp256k1",
+                  "value": "AzQjiDchrNLB3RpH3CwTYvuRMtwdpyZu3WlPMvGU0OVo"
+                },
+                "signature": "bELdvqUkPB6JJTtHA2YgjrdpS7LlDCrIH/RUusoS8AMJ6ynWfpG05ciQeraD/tMC1AGolO3PijoRjx24futLbA=="
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "inflation": {
+      "assets": {
+        "assets": [],
+        "last_applied": "2020-01-08T12:00:00.000000Z",
+        "last_applied_height": "0"
+      }
+    },
+    "issuer": {
+      "issuers": null
+    },
+    "liquidityprovider": {
+      "accounts": null
+    },
+    "market": null,
+    "slashing": {
+      "missed_blocks": {},
+      "params": {
+        "downtime_jail_duration": "3600000000000",
+        "max_evidence_age": "120000000000",
+        "min_signed_per_window": "0.100000000000000000",
+        "signed_blocks_window_duration": "3600000000000",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.000100000000000000"
+      },
+      "signing_infos": {}
+    },
+    "staking": {
+      "delegations": null,
+      "exported": false,
+      "last_total_power": "0",
+      "last_validator_powers": null,
+      "params": {
+        "bond_denom": "ungm",
+        "max_entries": 7,
+        "max_validators": 30,
+        "unbonding_time": "1814400000000000"
+      },
+      "redelegations": null,
+      "unbonding_delegations": null,
+      "validators": null
+    },
+    "supply": {
+      "supply": []
+    }
+  },
+  "chain_id": "lilmermaid-5",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "16777216",
+      "max_gas": "-1",
+      "time_iota_ms": "1"
+    },
+    "evidence": {
+      "max_age": "100000"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    }
+  },
+  "genesis_time": "2020-01-08T12:00:00.000000Z"
+}

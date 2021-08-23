@@ -1,0 +1,184 @@
+{
+  "genesis_time": "2019-11-08T12:00:00.000000Z",
+  "chain_id": "lilmermaid-4",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "16777216",
+      "max_gas": "-1",
+      "time_iota_ms": "1"
+    },
+    "evidence": {
+      "max_age": "100000"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    }
+  },
+  "app_hash": "",
+  "app_state": {
+    "supply": {
+      "supply": []
+    },
+    "accounts": [
+      {
+        "address": "emoney16j4trwyg8a3pfwqu2ely96tkzl05eh4vvyyfts",
+        "coins": [
+          {
+            "denom": "x3ngm",
+            "amount": "99000000000"
+          }
+        ],
+        "sequence_number": "0",
+        "account_number": "0",
+        "original_vesting": [],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "start_time": "0",
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null
+      },
+      {
+        "address": "emoney1fj76mrfpcwm7yqlmfqkqlx9kgvjns97c5f0403",
+        "coins": [
+          {
+            "denom": "x3ngm",
+            "amount": "1000000000"
+          }
+        ],
+        "sequence_number": "0",
+        "account_number": "0",
+        "original_vesting": [],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "start_time": "0",
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null
+      }
+    ],
+    "inflation": {
+      "assets": {
+        "last_applied": "2019-11-08T12:00:00.000000Z",
+        "last_applied_height": "0",
+        "assets": []
+      }
+    },
+    "distribution": {
+      "fee_pool": {
+        "community_pool": []
+      },
+      "community_tax": "0.000000000000000000",
+      "base_proposer_reward": "0.010000000000000000",
+      "bonus_proposer_reward": "0.040000000000000000",
+      "withdraw_addr_enabled": true,
+      "delegator_withdraw_infos": [],
+      "previous_proposer": "",
+      "outstanding_rewards": [],
+      "validator_accumulated_commissions": [],
+      "validator_historical_rewards": [],
+      "validator_current_rewards": [],
+      "delegator_starting_infos": [],
+      "validator_slash_events": []
+    },
+    "liquidityprovider": {
+      "accounts": null
+    },
+    "issuer": {
+      "issuers": null
+    },
+    "genutil": {
+      "gentxs": [
+        {
+          "type": "cosmos-sdk/StdTx",
+          "value": {
+            "msg": [
+              {
+                "type": "cosmos-sdk/MsgCreateValidator",
+                "value": {
+                  "description": {
+                    "moniker": "validator.network",
+                    "identity": "357F80896B3311B4",
+                    "website": "https://validator.network",
+                    "details": "Highly resilient and secure validator operating out of Northern Europe. See website for terms of service."
+                  },
+                  "commission": {
+                    "rate": "0.100000000000000000",
+                    "max_rate": "1.000000000000000000",
+                    "max_change_rate": "1.000000000000000000"
+                  },
+                  "min_self_delegation": "1000",
+                  "delegator_address": "emoney1fj76mrfpcwm7yqlmfqkqlx9kgvjns97c5f0403",
+                  "validator_address": "emoneyvaloper1fj76mrfpcwm7yqlmfqkqlx9kgvjns97cnffp3u",
+                  "pubkey": "emoneyvalconspub1zcjduepqr7pgxa2nufp3lz4rclqf776nhky8va0nxk42atn0c49ytrxqv6mqsxpf65",
+                  "value": {
+                    "denom": "x3ngm",
+                    "amount": "500000000"
+                  }
+                }
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas": "200000"
+            },
+            "signatures": [
+              {
+                "pub_key": {
+                  "type": "tendermint/PubKeySecp256k1",
+                  "value": "AzQjiDchrNLB3RpH3CwTYvuRMtwdpyZu3WlPMvGU0OVo"
+                },
+                "signature": "3RCcqhzv+b5B0XaPcLAfMC8FqPY4RekIhpgcGE76mRZ9cDwG1baNLi9ruVreDsVrhA+xUwtf6WAZHt2gHstYRg=="
+              }
+            ],
+            "memo": "6ffb1e450a9efed17aead62a4dd9e453e2ee5c4d@3.123.252.230:26656"
+          }
+        }
+      ]
+    },
+    "authority": {
+      "key": "emoney16j4trwyg8a3pfwqu2ely96tkzl05eh4vvyyfts"
+    },
+    "staking": {
+      "params": {
+        "unbonding_time": "1814400000000000",
+        "max_validators": 100,
+        "max_entries": 7,
+        "bond_denom": "x3ngm"
+      },
+      "last_total_power": "0",
+      "last_validator_powers": null,
+      "validators": null,
+      "delegations": null,
+      "unbonding_delegations": null,
+      "redelegations": null,
+      "exported": false
+    },
+    "auth": {
+      "params": {
+        "max_memo_characters": "256",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000"
+      }
+    },
+    "slashing": {
+      "params": {
+        "max_evidence_age": "120000000000",
+        "signed_blocks_window_duration": "3600000000000",
+        "min_signed_per_window": "0.1",
+        "downtime_jail_duration": "3600000000000",
+        "slash_fraction_double_sign": "0.05",
+        "slash_fraction_downtime": "0.001"
+      },
+      "signing_infos": {},
+      "missed_blocks": {}
+    },
+    "bank": {
+      "send_enabled": true
+    }
+  }
+}

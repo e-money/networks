@@ -1,0 +1,554 @@
+{
+  "genesis_time": "2021-08-17T10:24:45.291158Z",
+  "chain_id": "lilmermaid-9",
+  "initial_height": "1",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "22020096",
+      "max_gas": "-1",
+      "time_iota_ms": "1000"
+    },
+    "evidence": {
+      "max_age_num_blocks": "100000",
+      "max_age_duration": "172800000000000",
+      "max_bytes": "1048576"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    },
+    "version": {}
+  },
+  "app_hash": "",
+  "app_state": {
+    "auth": {
+      "params": {
+        "max_memo_characters": "256",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000"
+      },
+      "accounts": [
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "emoney1aw569wk7mhh45z8ecjur5w6q0rkcsk52x3gyfu",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "emoney1fczgjwj4crqg48d2etg5f73vmqxdtt5a7jdtgh",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        }
+      ]
+    },
+    "authority": {
+      "key": "emoney1fczgjwj4crqg48d2etg5f73vmqxdtt5a7jdtgh",
+      "min_gas_prices": []
+    },
+    "bank": {
+      "params": {
+        "send_enabled": [],
+        "default_send_enabled": true
+      },
+      "balances": [
+        {
+          "address": "emoney1aw569wk7mhh45z8ecjur5w6q0rkcsk52x3gyfu",
+          "coins": [
+            {
+              "denom": "node0token",
+              "amount": "1000"
+            },
+            {
+              "denom": "ungm",
+              "amount": "6000"
+            }
+          ]
+        },
+        {
+          "address": "emoney1fczgjwj4crqg48d2etg5f73vmqxdtt5a7jdtgh",
+          "coins": [
+            {
+              "denom": "echf",
+              "amount": "100000000000"
+            },
+            {
+              "denom": "edkk",
+              "amount": "3500000000000"
+            },
+            {
+              "denom": "eeur",
+              "amount": "100000000000"
+            },
+            {
+              "denom": "ejpy",
+              "amount": "3500000000000"
+            },
+            {
+              "denom": "enok",
+              "amount": "3500000000000"
+            },
+            {
+              "denom": "esek",
+              "amount": "3500000000000"
+            },
+            {
+              "denom": "ungm",
+              "amount": "990000000000"
+            }
+          ]
+        }
+      ],
+      "supply": [],
+      "denom_metadata": []
+    },
+    "bep3": {
+      "params": {
+        "asset_params": [
+          {
+            "denom": "echf",
+            "coin_id": "1",
+            "supply_limit": {
+              "limit": "1000000000000",
+              "time_period": "86400000000000",
+              "time_based_limit": "0"
+            },
+            "active": true,
+            "deputy_address": "emoney1lagqmceycrfpkyu7y6ayrk6jyvru5mkrezacpw",
+            "fixed_fee": "5000",
+            "min_swap_amount": "1",
+            "max_swap_amount": "1000000000000",
+            "swap_time": "1629195885",
+            "swap_time_span_min": "4320"
+          },
+          {
+            "denom": "edkk",
+            "coin_id": "2",
+            "supply_limit": {
+              "limit": "1000000000000",
+              "time_period": "86400000000000",
+              "time_based_limit": "0"
+            },
+            "active": true,
+            "deputy_address": "emoney1lagqmceycrfpkyu7y6ayrk6jyvru5mkrezacpw",
+            "fixed_fee": "5000",
+            "min_swap_amount": "1",
+            "max_swap_amount": "1000000000000",
+            "swap_time": "1629195885",
+            "swap_time_span_min": "4320"
+          },
+          {
+            "denom": "eeur",
+            "coin_id": "3",
+            "supply_limit": {
+              "limit": "1000000000000",
+              "time_period": "86400000000000",
+              "time_based_limit": "0"
+            },
+            "active": true,
+            "deputy_address": "emoney1lagqmceycrfpkyu7y6ayrk6jyvru5mkrezacpw",
+            "fixed_fee": "5000",
+            "min_swap_amount": "1",
+            "max_swap_amount": "1000000000000",
+            "swap_time": "1629195885",
+            "swap_time_span_min": "4320"
+          },
+          {
+            "denom": "enok",
+            "coin_id": "4",
+            "supply_limit": {
+              "limit": "1000000000000",
+              "time_period": "86400000000000",
+              "time_based_limit": "0"
+            },
+            "active": true,
+            "deputy_address": "emoney1lagqmceycrfpkyu7y6ayrk6jyvru5mkrezacpw",
+            "fixed_fee": "5000",
+            "min_swap_amount": "1",
+            "max_swap_amount": "1000000000000",
+            "swap_time": "1629195885",
+            "swap_time_span_min": "4320"
+          },
+          {
+            "denom": "esek",
+            "coin_id": "5",
+            "supply_limit": {
+              "limit": "1000000000000",
+              "time_period": "86400000000000",
+              "time_based_limit": "0"
+            },
+            "active": true,
+            "deputy_address": "emoney1lagqmceycrfpkyu7y6ayrk6jyvru5mkrezacpw",
+            "fixed_fee": "5000",
+            "min_swap_amount": "1",
+            "max_swap_amount": "1000000000000",
+            "swap_time": "1629195885",
+            "swap_time_span_min": "4320"
+          },
+          {
+            "denom": "ungm",
+            "coin_id": "6",
+            "supply_limit": {
+              "limit": "1000000000000",
+              "time_period": "86400000000000",
+              "time_based_limit": "0"
+            },
+            "active": true,
+            "deputy_address": "emoney1lagqmceycrfpkyu7y6ayrk6jyvru5mkrezacpw",
+            "fixed_fee": "5000",
+            "min_swap_amount": "1",
+            "max_swap_amount": "1000000000000",
+            "swap_time": "1629195885",
+            "swap_time_span_min": "4320"
+          }
+        ]
+      },
+      "atomic_swaps": [],
+      "supplies": {
+        "asset_supplies": [
+          {
+            "incoming_supply": {
+              "denom": "echf",
+              "amount": "0"
+            },
+            "outgoing_supply": {
+              "denom": "echf",
+              "amount": "0"
+            },
+            "current_supply": {
+              "denom": "echf",
+              "amount": "500000000000"
+            },
+            "time_limited_current_supply": {
+              "denom": "echf",
+              "amount": "0"
+            }
+          },
+          {
+            "incoming_supply": {
+              "denom": "edkk",
+              "amount": "0"
+            },
+            "outgoing_supply": {
+              "denom": "edkk",
+              "amount": "0"
+            },
+            "current_supply": {
+              "denom": "edkk",
+              "amount": "500000000000"
+            },
+            "time_limited_current_supply": {
+              "denom": "edkk",
+              "amount": "0"
+            }
+          },
+          {
+            "incoming_supply": {
+              "denom": "eeur",
+              "amount": "0"
+            },
+            "outgoing_supply": {
+              "denom": "eeur",
+              "amount": "0"
+            },
+            "current_supply": {
+              "denom": "eeur",
+              "amount": "500000000000"
+            },
+            "time_limited_current_supply": {
+              "denom": "eeur",
+              "amount": "0"
+            }
+          },
+          {
+            "incoming_supply": {
+              "denom": "enok",
+              "amount": "0"
+            },
+            "outgoing_supply": {
+              "denom": "enok",
+              "amount": "0"
+            },
+            "current_supply": {
+              "denom": "enok",
+              "amount": "500000000000"
+            },
+            "time_limited_current_supply": {
+              "denom": "enok",
+              "amount": "0"
+            }
+          },
+          {
+            "incoming_supply": {
+              "denom": "esek",
+              "amount": "0"
+            },
+            "outgoing_supply": {
+              "denom": "esek",
+              "amount": "0"
+            },
+            "current_supply": {
+              "denom": "esek",
+              "amount": "500000000000"
+            },
+            "time_limited_current_supply": {
+              "denom": "esek",
+              "amount": "0"
+            }
+          },
+          {
+            "incoming_supply": {
+              "denom": "ungm",
+              "amount": "0"
+            },
+            "outgoing_supply": {
+              "denom": "ungm",
+              "amount": "0"
+            },
+            "current_supply": {
+              "denom": "ungm",
+              "amount": "500000000000"
+            },
+            "time_limited_current_supply": {
+              "denom": "ungm",
+              "amount": "0"
+            }
+          }
+        ]
+      },
+      "previous_block_time": "1970-01-01T00:00:00Z"
+    },
+    "buyback": {
+      "interval": "1ms"
+    },
+    "capability": {
+      "index": "1",
+      "owners": []
+    },
+    "crisis": {
+      "constant_fee": {
+        "denom": "ungm",
+        "amount": "1000"
+      }
+    },
+    "distribution": {
+      "params": {
+        "community_tax": "0.000000000000000000",
+        "base_proposer_reward": "0.010000000000000000",
+        "bonus_proposer_reward": "0.040000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "fee_pool": {
+        "community_pool": []
+      },
+      "delegator_withdraw_infos": [],
+      "previous_proposer": "",
+      "outstanding_rewards": [],
+      "validator_accumulated_commissions": [],
+      "validator_historical_rewards": [],
+      "validator_current_rewards": [],
+      "delegator_starting_infos": [],
+      "validator_slash_events": []
+    },
+    "emqueries": null,
+    "evidence": {
+      "evidence": []
+    },
+    "genutil": {
+      "gen_txs": [
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "node0",
+                  "identity": "",
+                  "website": "",
+                  "security_contact": "",
+                  "details": ""
+                },
+                "commission": {
+                  "rate": "0.150000000000000000",
+                  "max_rate": "1.000000000000000000",
+                  "max_change_rate": "1.000000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "emoney1aw569wk7mhh45z8ecjur5w6q0rkcsk52x3gyfu",
+                "validator_address": "emoneyvaloper1aw569wk7mhh45z8ecjur5w6q0rkcsk52p3wsh3",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "+3OXCRCOzcgDcCgLtZn75UVDNtMoV16KnlU6GDUTzxQ="
+                },
+                "value": {
+                  "denom": "ungm",
+                  "amount": "6000"
+                }
+              }
+            ],
+            "memo": "951dc30827c682bf99e99c08776429d8b900b22a@192.168.0.1:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "A3pWM2LN88gSCMxL3wip1m0tGM/7dx/zEWHCmjkGvYRz"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "0",
+              "payer": "",
+              "granter": ""
+            }
+          },
+          "signatures": [
+            "N2sLm6P1gY1qiaMc0wY6cfWAT/eZqePjzi3KnSs3Q5dak1o3Ri4uAnqkoLceGFibZ/ciBZAsDQyrzvwwf1LtPQ=="
+          ]
+        }
+      ]
+    },
+    "gov": {
+      "starting_proposal_id": "1",
+      "deposits": [],
+      "votes": [],
+      "proposals": [],
+      "deposit_params": {
+        "min_deposit": [
+          {
+            "denom": "ungm",
+            "amount": "10000000"
+          }
+        ],
+        "max_deposit_period": "172800s"
+      },
+      "voting_params": {
+        "voting_period": "172800s"
+      },
+      "tally_params": {
+        "quorum": "0.334000000000000000",
+        "threshold": "0.500000000000000000",
+        "veto_threshold": "0.334000000000000000"
+      }
+    },
+    "ibc": {
+      "client_genesis": {
+        "clients": [],
+        "clients_consensus": [],
+        "clients_metadata": [],
+        "params": {
+          "allowed_clients": [
+            "06-solomachine",
+            "07-tendermint"
+          ]
+        },
+        "create_localhost": false,
+        "next_client_sequence": "0"
+      },
+      "connection_genesis": {
+        "connections": [],
+        "client_connection_paths": [],
+        "next_connection_sequence": "0"
+      },
+      "channel_genesis": {
+        "channels": [],
+        "acknowledgements": [],
+        "commitments": [],
+        "receipts": [],
+        "send_sequences": [],
+        "recv_sequences": [],
+        "ack_sequences": [],
+        "next_channel_sequence": "0"
+      }
+    },
+    "inflation": {
+      "assets": {
+        "last_applied": "2021-08-17T10:24:45.288122Z",
+        "last_applied_height": "0",
+        "assets": [
+          {
+            "denom": "ejpy",
+            "inflation": "0.050000000000000000",
+            "accum": "0.000000000000000000"
+          },
+          {
+            "denom": "echf",
+            "inflation": "0.100000000000000000",
+            "accum": "0.000000000000000000"
+          },
+          {
+            "denom": "eeur",
+            "inflation": "0.010000000000000000",
+            "accum": "0.000000000000000000"
+          },
+          {
+            "denom": "ungm",
+            "inflation": "0.100000000000000000",
+            "accum": "0.000000000000000000"
+          }
+        ]
+      }
+    },
+    "issuer": {
+      "issuers": []
+    },
+    "liquidityprovider": {
+      "accounts": []
+    },
+    "market": null,
+    "params": null,
+    "slashing": {
+      "params": {
+        "signed_blocks_window": "3600000000000",
+        "min_signed_per_window": "0.100000000000000000",
+        "downtime_jail_duration": "3600s",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.001000000000000000"
+      },
+      "signing_infos": [],
+      "missed_blocks": []
+    },
+    "staking": {
+      "params": {
+        "unbonding_time": "1814400s",
+        "max_validators": 100,
+        "max_entries": 7,
+        "historical_entries": 10000,
+        "bond_denom": "ungm"
+      },
+      "last_total_power": "0",
+      "last_validator_powers": [],
+      "validators": [],
+      "delegations": [],
+      "unbonding_delegations": [],
+      "redelegations": [],
+      "exported": false
+    },
+    "transfer": {
+      "port_id": "transfer",
+      "denom_traces": [],
+      "params": {
+        "send_enabled": true,
+        "receive_enabled": true
+      }
+    },
+    "upgrade": {},
+    "vesting": {}
+  }
+}

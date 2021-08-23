@@ -1,0 +1,244 @@
+{
+  "genesis_time": "2019-08-16T08:35:29.894544Z",
+  "chain_id": "lilmermaid-2",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "1048576",
+      "max_gas": "-1",
+      "time_iota_ms": "1"
+    },
+    "evidence": {
+      "max_age": "100000"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    }
+  },
+  "app_hash": "",
+  "app_state": {
+    "accounts": [
+      {
+        "address": "emoney16c6h7g6w0mulllm8k7ulx9rs8m3g6fzypgpd2d",
+        "coins": [
+          {
+            "denom": "x3ngm",
+            "amount": "1000000000"
+          }
+        ],
+        "sequence_number": "0",
+        "account_number": "0",
+        "original_vesting": [],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "start_time": "0",
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null
+      },
+      {
+        "address": "emoney127teu2esvmqhhcn5hnh29eq7ndh7f3etnsww7v",
+        "coins": [
+          {
+            "denom": "x0jpy",
+            "amount": "3500000"
+          },
+          {
+            "denom": "x2chf",
+            "amount": "10000"
+          },
+          {
+            "denom": "x2eur",
+            "amount": "25000"
+          },
+          {
+            "denom": "x3ngm",
+            "amount": "99000000000"
+          }
+        ],
+        "sequence_number": "0",
+        "account_number": "0",
+        "original_vesting": [],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "start_time": "0",
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null
+      },
+      {
+        "address": "emoney1dgkjvr2kkrp0xc5qn66g23us779q2dmgle5aum",
+        "coins": [
+          {
+            "denom": "x0jpy",
+            "amount": "3500000"
+          },
+          {
+            "denom": "x2chf",
+            "amount": "10000"
+          },
+          {
+            "denom": "x2eur",
+            "amount": "25000"
+          }
+        ],
+        "sequence_number": "0",
+        "account_number": "0",
+        "original_vesting": [],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "start_time": "0",
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null
+      },
+      {
+        "address": "emoney1kt0vh0ttget0xx77g6d3ttnvq2lnxx6vp3uyl0",
+        "coins": [
+          {
+            "denom": "x0jpy",
+            "amount": "3500000"
+          },
+          {
+            "denom": "x2chf",
+            "amount": "10000"
+          },
+          {
+            "denom": "x2eur",
+            "amount": "25000"
+          }
+        ],
+        "sequence_number": "0",
+        "account_number": "0",
+        "original_vesting": [],
+        "delegated_free": [],
+        "delegated_vesting": [],
+        "start_time": "0",
+        "end_time": "0",
+        "module_name": "",
+        "module_permissions": null
+      }
+    ],
+    "genutil": {
+      "gentxs": [
+        {
+          "type": "cosmos-sdk/StdTx",
+          "value": {
+            "msg": [
+              {
+                "type": "cosmos-sdk/MsgCreateValidator",
+                "value": {
+                  "description": {
+                    "moniker": "Validator-0",
+                    "identity": "",
+                    "website": "",
+                    "details": ""
+                  },
+                  "commission": {
+                    "rate": "0.150000000000000000",
+                    "max_rate": "1.000000000000000000",
+                    "max_change_rate": "1.000000000000000000"
+                  },
+                  "min_self_delegation": "1",
+                  "delegator_address": "emoney16c6h7g6w0mulllm8k7ulx9rs8m3g6fzypgpd2d",
+                  "validator_address": "emoneyvaloper16c6h7g6w0mulllm8k7ulx9rs8m3g6fzyxg8e5q",
+                  "pubkey": "emoneyvalconspub1zcjduepqe2ysfz0l4y2xazgwrucqkhkmmuy734x29xy45m8y2m20jt7la3jsx0y927",
+                  "value": {
+                    "denom": "x3ngm",
+                    "amount": "1"
+                  }
+                }
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas": "0"
+            },
+            "signatures": [
+              {
+                "pub_key": {
+                  "type": "tendermint/PubKeySecp256k1",
+                  "value": "A1D4vfPp0JHuEVEReHTetkug+gn3Qp5sRndZermiZvwy"
+                },
+                "signature": "p22lZK9EVDIwYIIdVNCD2AVzLmi/JoMyDcgFV22x6SlyK4PxT+CfY9x3npYbbWBVP5JzGUTwmMxGeq6SUf1jdw=="
+              }
+            ],
+            "memo": " - "
+          }
+        }
+      ]
+    },
+    "auth": {
+      "params": {
+        "max_memo_characters": "256",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000"
+      }
+    },
+    "bank": {
+      "send_enabled": true
+    },
+    "supply": {
+      "supply": {
+        "total": []
+      }
+    },
+    "staking": {
+      "params": {
+        "unbonding_time": "259200000000000",
+        "max_validators": 100,
+        "max_entries": 7,
+        "bond_denom": "x3ngm"
+      },
+      "last_total_power": "0",
+      "last_validator_powers": null,
+      "validators": null,
+      "delegations": null,
+      "unbonding_delegations": null,
+      "redelegations": null,
+      "exported": false
+    },
+    "inflation": {
+      "assets": {
+        "last_applied": "2019-08-16T08:35:29.894544Z",
+        "assets": [
+          {
+            "denom": "x0jpy",
+            "inflation": "0.050000000000000000",
+            "accum": "0.000000000000000000"
+          },
+          {
+            "denom": "x2chf",
+            "inflation": "0.033333333333333333",
+            "accum": "0.000000000000000000"
+          },
+          {
+            "denom": "x2eur",
+            "inflation": "0.010000000000000000",
+            "accum": "0.000000000000000000"
+          }
+        ]
+      }
+    },
+    "distribution": {
+      "fee_pool": {
+        "community_pool": []
+      },
+      "community_tax": "0.000000000000000000",
+      "base_proposer_reward": "0.010000000000000000",
+      "bonus_proposer_reward": "0.040000000000000000",
+      "withdraw_addr_enabled": true,
+      "delegator_withdraw_infos": [],
+      "previous_proposer": "",
+      "outstanding_rewards": [],
+      "validator_accumulated_commissions": [],
+      "validator_historical_rewards": [],
+      "validator_current_rewards": [],
+      "delegator_starting_infos": [],
+      "validator_slash_events": []
+    }
+  }
+}
