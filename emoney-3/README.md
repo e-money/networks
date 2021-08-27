@@ -21,3 +21,9 @@ Below you'll find the instructions for upgrading from emoney-2.
 
 ## Optional: Update git reposority
 * Finally commit new genesis using `git add -f emoney-2.export.json genesis.json && git commit -m "Add emoney-3 genesis"`
+
+## Migrate keyring
+
+Since emcli is deprecated the default location of the file based keyring has changed as well.
+
+You'll need to copy your keyring from ~/.emcli to ~/.emd, e.g. `cp -vR ~/.emcli/keyring-e-money/ ~/.emd/keyring-file`
