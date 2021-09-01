@@ -13,7 +13,7 @@ Peers: [emoney-2/PEERS.md](emoney-2/PEERS.md)
 
 ## Latest Testnet
 
-Chain ID: [lilmermaid-11](lilmermaid-11/README.md)  
-Software: [v1.0.0-RC2](https://github.com/e-money/em-ledger/releases/tag/v1.0.0-RC2)  
-Genesis:  https://raw.githubusercontent.com/e-money/networks/master/lilmermaid-11/genesis.json  
-Peers: [lilmermaid-10/PEERS.md](lilmermaid-11/PEERS.md)  
+Chain ID: [lilmermaid-12](lilmermaid-12/README.md)  
+Software: [v1.0.0-RC3](https://github.com/e-money/em-ledger/releases/tag/v1.0.0-RC3)  
+Genesis:  https://raw.githubusercontent.com/e-money/networks/master/lilmermaid-12/genesis.json  
+Peers: [lilmermaid-12/PEERS.md](lilmermaid-12/PEERS.md)  
