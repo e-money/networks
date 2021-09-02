@@ -13,7 +13,7 @@ Validators who complete all of the task below will be rewarded with xxxx NGM, to
 
 The genesis file is based on an [export from the existing emoney-2 mainnet](emoney-2.export.json) with modifications to launch it with a single validator.
 
-Please provide participation proof by making a pull request with changes into the [REWARDS.md](REWARDS.md).
+Please provide participation proof by making a pull request with changes into the [REWARDS.md](REWARDS.md) file.
 
 
 ## Task 1: Installation
