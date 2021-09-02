@@ -20,7 +20,7 @@ Please provide participation proof by making a pull request with changes into th
 
 Check list:
 * [ ] Install [Cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor) and create the appropriate directory structure
-* [ ] Install the [v1.0.0-RC7](https://github.com/e-money/em-ledger/releases/tag/v1.0.0-RC7) binaries
+* [ ] Install the [v1.0.0-RC9](https://github.com/e-money/em-ledger/releases/tag/v1.0.0-RC9) binaries
 * [ ] Initialise software: `emd init...`
 * [ ] Copy the [genesis file](https://raw.githubusercontent.com/e-money/networks/master/lilmermaid-13/genesis.json) to `config/`
 * [ ] Configure [peers](PEERS.md) in `config/config.toml`
@@ -38,15 +38,23 @@ Check list:
 * [ ] Prepare NGM funding using either the [faucet](FAUCET.md) or use your existing mainnet validator operator account (which was exported into the testnet).
 * [ ] Use emd to create the transaction: `emd tx staking create-validator ...`
 
+## Task 3: Create a Market Limit Order
 
-## Task X: Create a Market Limit Order
+Try `emd tx market add-limit ...` or use the [wallet](https://beta-wallet.e-money.com).
 
+## Task 4: Replace a Market Limit Order
 
-## Task X: Replace a Market Limit Order
+Try `emd tx market cancelreplace ...`.
 
+## Task 5: Cancel a Market  Order
 
-## Task X: Cancel a Market Limit Order
+Try `emd tx market cancel ...` or use the [wallet](https://beta-wallet.e-money.com).
 
+## Task 6: Participate in Upgrade Module test
 
-## Task X: Participate in the mainnet upgrade
+Check list:
+* [ ] Install the [TBD]() binaries to `cosmovisor/upgrades/upgrade-test-2/binaries`
 
+## Task 7: Participate in the mainnet upgrade
+
+More details to follow.
