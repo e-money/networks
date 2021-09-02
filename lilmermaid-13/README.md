@@ -1,24 +1,52 @@
 # lilmermaid-13 Testnet
 
-This testnet is intended to exercise the em-ledger v1.0 releases, containing major changes such as IBC and an upgrade to Cosmos SDK v0.42.
+lilmermaid-13 is an incentivised testnet for **existing validators** of the e-Money mainnet.
 
-It is based on an [export from the existing emoney-2 mainnet](emoney-2.export.json).
+The goal of the testnet is to ensure that validators are prepared for the mainnet upgrade and are comfortable with the changes from the current mainnet.
 
-## Faucet
+There is a faucet account available, see [FAUCET.md](FAUCET.md).
 
-There is a faucet account available that is entirely self-service, with a few conditions:
 
-1) Only take what you need
-2) Return what you don't need
-3) We'll top up as needed
+# Testnet rewards
 
-Use `emd keys add --recover lilmermaid-faucet` to add the faucet account using the below mnemonic:
+Validators who complete all of the task below will be rewarded with xxxx NGM, to be delivered after the mainnet upgrade to the validator operator account.
+
+The genesis file is based on an [export from the existing emoney-2 mainnet](emoney-2.export.json) with modifications to launch it with a single validator.
+
+Please provide participation proof by making a pull request with changes into the [REWARDS.md](REWARDS.md).
+
+
+## Task 1: Installation
+
+Check list:
+* [ ] Install [Cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor) and create the appropriate directory structure
+* [ ] Install the [v1.0.0-RC7](https://github.com/e-money/em-ledger/releases/tag/v1.0.0-RC7) binaries
+* [ ] Initialise software: `emd init...`
+* [ ] Copy the [genesis file](https://raw.githubusercontent.com/e-money/networks/master/lilmermaid-13/genesis.json) to `config/`
+* [ ] Configure [peers](PEERS.md) in `config/config.toml`
+* [ ] Run emd as a service using Cosmovisor
+
+It is suggested to set the following Cosmosvisor environment variables:
 ```
-Mnemonic: satisfy select word swamp solar silver flavor sting screen novel deny win tape cement hole embark pact purpose goat latin gesture orange swift maple
-Address:  emoney1j7sq6dadld46vruk92r0se0tv0f3uc4pvl4ntd
+DAEMON_RESTART_AFTER_UPGRADE=true
+DAEMON_ALLOW_DOWNLOAD_BINARIES=false
 ```
 
-We suggest using the following command to transfer from the faucet:
-```
-emd tx send lilmermaid-faucet <your-validator> "500000000ungm" --gas-prices "1.0ungm"
-```
+## Task 2: Create validator
+
+Check list:
+* [ ] Prepare NGM funding using either the [faucet](FAUCET.md) or use your existing mainnet validator operator account (which was exported into the testnet).
+* [ ] Use emd to create the transaction: `emd tx staking create-validator ...`
+
+
+## Task X: Create a Market Limit Order
+
+
+## Task X: Replace a Market Limit Order
+
+
+## Task X: Cancel a Market Limit Order
+
+
+## Task X: Participate in the mainnet upgrade
+
