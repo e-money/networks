@@ -53,7 +53,9 @@ Try `emd tx market cancel ...` or use the [wallet](https://beta-wallet.e-money.c
 ## Task 6: Participate in Upgrade Module test
 
 Check list:
+* [ ] Participate in coordination of the upgrade in the [validator hangout group](https://t.me/joinchat/HBB5elfpWv8rADBFhhjbtg).
 * [ ] Install the [TBD]() binaries to `cosmovisor/upgrades/upgrade-test-2/binaries`
+* [ ] Monitor the validator during the upgrade and confirm it successfully completed at the scheduled height.
 
 ## Task 7: Participate in the mainnet upgrade
 
