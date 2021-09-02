@@ -1,4 +1,4 @@
-# lilmermaid-11 Testnet
+# lilmermaid-12 Testnet
 
 This testnet is intended to exercise the em-ledger v1.0 releases, containing major changes such as IBC and an upgrade to Cosmos SDK v0.42.
 
