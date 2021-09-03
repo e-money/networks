@@ -9,7 +9,7 @@ There is a faucet account available, see [FAUCET.md](FAUCET.md).
 
 # Testnet rewards
 
-Validators who complete all of the task below will be rewarded with xxxx NGM, to be delivered after the mainnet upgrade to the validator operator account.
+Validators who complete all of the task below will be rewarded with 1000 NGM, to be delivered after the mainnet upgrade to the validator operator account.
 
 The genesis file is based on an [export from the existing emoney-2 mainnet](emoney-2.export.json) with modifications to launch it with a single validator.
 
