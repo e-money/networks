@@ -1,0 +1,2 @@
+genesis.json filter=lfs diff=lfs merge=lfs -text
+osmosis-1.export.json filter=lfs diff=lfs merge=lfs -text
