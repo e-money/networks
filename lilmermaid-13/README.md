@@ -2,7 +2,7 @@
 
 lilmermaid-13 is an incentivised testnet for **existing validators** of the e-Money mainnet.
 
-The goal of the testnet is to ensure that validators are prepared for the mainnet upgrade and are comfortable with the changes from the current mainnet.
+The goal of the testnet is to ensure that validators are prepared for the mainnet upgrade and are comfortable with the changes from the current mainnet. See [CHANGELOG.md](https://github.com/e-money/em-ledger/blob/develop/CHANGELOG.md) for major changes.
 
 There is a faucet account available, see [FAUCET.md](FAUCET.md).
 
