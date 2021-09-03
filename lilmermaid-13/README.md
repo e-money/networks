@@ -24,7 +24,7 @@ Check list:
 * [ ] Initialise software: `emd init...`
 * [ ] Copy the [genesis file](https://raw.githubusercontent.com/e-money/networks/master/lilmermaid-13/genesis.json) to `config/`
 * [ ] Configure [peers](PEERS.md) in `config/config.toml`
-* [ ] Run emd as a service using Cosmovisor
+* [ ] Run emd as a service using Cosmovisor with `--x-crisis-skip-assert-invariants`
 
 It is suggested to set the following Cosmosvisor environment variables:
 ```
