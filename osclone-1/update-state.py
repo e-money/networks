@@ -6,9 +6,11 @@ import json
 old_validator_address = "8D8CB9C26740BA74A2AA0ABF9D2BAF98226485A6"
 old_operator_address = "osmovaloper1sxx9mszve0gaedz5ld7qdkjkfv8z992a3z2szp"
 old_consensus_public_key = "uRUDzQd5POrn/+PUujTx0CvwO6sZxrw0MIEJcgFGCNU="
+old_consensus_address = "osmovalcons13kxtnsn8gza8fg42p2le62a0nq3xfpdxxphd7r"
 new_validator_address = "7ADE63DE3DBFD3772927FDF319D23994B8323BC2"
 new_operator_address = "osmovaloper1sxx9mszve0gaedz5ld7qdkjkfv8z992a3z2szp"
 new_consensus_public_key = "+3OXCRCOzcgDcCgLtZn75UVDNtMoV16KnlU6GDUTzxQ="
+new_consensus_address = "osmovalcons10t0x8h3ahlfhw2f8lhe3n53ejjuryw7zqkxkyf"
 
 # Process intermediate (migrated) genesis file
 with open("osmosis-1.export.json") as importfile:
@@ -106,8 +108,21 @@ with open("osmosis-1.export.json") as importfile:
     distribution["validator_historical_rewards"] = replacement_validator_historical_rewards
 
     # Signing infos
-    slashing["signing_infos"] = []
-    slashing["missed_blocks"] = []
+    replacement_signing_infos = []
+    for signing_info in slashing["signing_infos"]:
+        if signing_info["address"] == old_consensus_address:
+            signing_info["address"] = new_consensus_address
+            signing_info["validator_signing_info"]["address"] = new_consensus_address
+            replacement_signing_infos.append(signing_info)
+    slashing["signing_infos"] = replacement_signing_infos
+
+    # Missed blocks
+    replacement_missed_blocks = []
+    for missed_block_info in slashing["missed_blocks"]:
+        if missed_block_info["address"] == old_consensus_address:
+            missed_block_info["address"] = new_consensus_address
+            replacement_missed_blocks.append(missed_block_info)
+    slashing["missed_blocks"] = replacement_missed_blocks
 
     # Create final genesis file
     with open("genesis.json", "w", encoding="utf-8") as exportfile:
