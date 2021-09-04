@@ -14,5 +14,5 @@ Address:  emoney1j7sq6dadld46vruk92r0se0tv0f3uc4pvl4ntd
 
 We suggest using the following command to transfer from the faucet:
 ```
-emd tx send lilmermaid-faucet <your-validator> "500000000ungm" --gas-prices "1.0ungm"
+emd tx bank send lilmermaid-faucet <your-validator> "500000000ungm" --gas-prices "1.0ungm" --chain-id="lilmermaid-13"
 ```
