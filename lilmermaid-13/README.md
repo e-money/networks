@@ -20,9 +20,8 @@ Please provide participation proof by making a pull request with changes into th
 
 Check list:
 * [ ] Install [Cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor) and create the appropriate directory structure
-* [ ] Install the [v1.0.0-RC6](https://github.com/e-money/em-ledger/releases/tag/v1.0.0-RC6) emd binary to `cosmovisor/genesis/bin`
-* [ ] Install the [v1.0.0-RC9](https://github.com/e-money/em-ledger/releases/tag/v1.0.0-RC9) emd binary to `cosmovisor/upgrades/v1.0.0-RC7/bin` (the upgrade-plan was named `v1.0.0-RC7` for historical reasons)
-* [ ] Initialise software: `emd init...`
+* [ ] Use [UPGRADES.md](UPGRADES.md) to install the emd binaries in the appropriate location
+* [ ] Initialise software: `cosmovisor/genesin/bin/emd init...`
 * [ ] Copy the [genesis file](https://raw.githubusercontent.com/e-money/networks/master/lilmermaid-13/genesis.json) to `config/`
 * [ ] Configure [peers](PEERS.md) in `config/config.toml`
 * [ ] Run emd as a service using Cosmovisor with `--x-crisis-skip-assert-invariants`
