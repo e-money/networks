@@ -1,7 +1,8 @@
 # Testnet Rewards
 
-Please create a pull request to add your validator and become eligible to receive testnet rewards: 
+Please create a pull request to add your validator and become eligible to receive testnet rewards:
 
-| Validator Name      | Task 1      | Task 2                                                           | Task 3 | Task 4 | Task 5 | Task 6 | Task 7 | Task 8 |
-| ------------------- | ----------- | ---------------------------------------------------------------- | ------ | ------ | ------ | ------ | ------ | ------ |
-| *Example Validator* | *Completed* | 93F6544D70AEA7195E7FA7D01DCCBF3F600531A1215D25F70D0B59DF83C08535 |        |        |        |        |        |        |
+| Validator Name      | Task 1      | Task 2                                                           | Task 3                                                           | Task 4                                                           | Task 5                                                           | Task 6                                                           | Task 7 | Task 8 |
+|---------------------|-------------|------------------------------------------------------------------|------------------------------------------------------------------|------------------------------------------------------------------|------------------------------------------------------------------|------------------------------------------------------------------|--------|--------|
+| *Example Validator* | *Completed* | 93F6544D70AEA7195E7FA7D01DCCBF3F600531A1215D25F70D0B59DF83C08535 |                                                                  |                                                                  |                                                                  |                                                                  |        |        |
+| EZStaking.io        | *Completed* | *Completed*                                                      | 5F81E3FC1513E94ECE1778400E30153C3C0D7BFB6FEAA15A2358183CA6AFD432 | 59BD35FD811347F8D67C0849989E7BA4650DDF6222741B87A9FB7F5D389D4A91 | 562DA704AAE690E236AB8AA79BAB1AB3A00F16B756A18A41DCE956A2B020201A | 67BB7D60325E94BB3871F69938C6412DEAB508C1E22244E8D195CF8E5913F4BB |        |        |
