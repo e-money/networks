@@ -52,12 +52,12 @@ Try `emd tx market cancel ...` or use the [wallet](https://beta-wallet.e-money.c
 
 ## Task 6: Conduct IBC Transfer
 
-More details to follow.
+Try sending tokens to [osclone-1 chain](../osclone-1/README.md) using `emd tx ibc-transfer transfer transfer channel-0 osmo1... 123456ungm`.
 
 ## Task 7: Participate in Upgrade Module Test
 
 Check list:
-* [ ] Participate in coordination of the upgrade in the [validator hangout group](https://t.me/joinchat/HBB5elfpWv8rADBFhhjbtg).
+* [ ] Await coordination of the upgrade in the [validator hangout group](https://t.me/joinchat/HBB5elfpWv8rADBFhhjbtg).
 * [ ] Install the [TBD]() binaries to `cosmovisor/upgrades/upgrade-test-1/binaries`
 * [ ] Monitor the validator during the upgrade and confirm it successfully completed at the scheduled height.
 
