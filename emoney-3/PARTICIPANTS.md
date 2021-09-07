@@ -20,8 +20,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Cosmostation
 * [ ] DCC CAPITAL
 * [ ] Dual Stacking
-* [ ] Dual Stacking Spare
-* [ ] e-Money.com // validator.network
+* [x] e-Money.com // validator.network
 * [ ] Easy 2 Stake
 * [ ] EZStaking.io
 * [ ] Figment
@@ -62,3 +61,5 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] WeStaking
 * [ ] Winter
 * [ ] Witval
+
+(please add your validator if missing)
