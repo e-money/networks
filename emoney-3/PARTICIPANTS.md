@@ -37,7 +37,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] melea
 * [ ] mete0r
 * [ ] mintonium
-* [ ] MissionControl
+* [x] MissionControl
 * [ ] Mr.K
 * [ ] MyCointainer
 * [ ] Newroad Network
