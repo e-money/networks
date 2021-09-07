@@ -63,4 +63,7 @@ Check list:
 
 ## Task 8: Participate in the Mainnet Upgrade
 
-More details to follow.
+Check list:
+* [ ] Perform the preparation steps in [emoney-3/README.md](../emoney-3/README.md#preparing-for-the-upgrade-from-emoney-2)
+* [ ] Signal readiness in [emoney-3/PARTICIPANTS.md](../emoney-3/PARTICIPANTS.md)
+* [ ] Participate in the emoney-3 mainnet upgrade on 2021-09-15 at 13:00:00 UTC
