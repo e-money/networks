@@ -4,6 +4,11 @@ This repository contains the official genesis file for current and historical [e
 
 If you intend to run a validator, please join our [validator hangout group](https://t.me/joinchat/HBB5elfpWv8rADBFhhjbtg).
 
+## Upcoming Mainnet Upgrade
+
+Chain ID: [emoney-3](emoney-3/README.md)  
+When: 2021-09-15 at 13:00:00 UTC  
+
 ## Latest Mainnet
 
 Chain ID: [emoney-2](emoney-2/README.md)  
