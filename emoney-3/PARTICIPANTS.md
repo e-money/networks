@@ -14,7 +14,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Block Producer
 * [ ] BlockHunters
 * [ ] blockscape
-* [ ] Cat Boss
+* [x] Cat Boss
 * [ ] ChainLayer
 * [ ] Cosmic Validator
 * [ ] Cosmostation
