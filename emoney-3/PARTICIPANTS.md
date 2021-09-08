@@ -48,7 +48,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] retz80
 * [ ] SG-1
 * [ ] Simply Staking
-* [ ] SpaceBlock
+* [x] SpaceBlock
 * [ ] stake.systems
 * [ ] stake.zone
 * [ ] Stake5 Labs
