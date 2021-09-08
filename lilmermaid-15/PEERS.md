@@ -7,6 +7,9 @@
 
 #blockscape
 0eb7a47e6dd6a09d6b4abdd15c74313bc6086ec7@188.34.197.81:26656
+
+# Cat Boss
+98171ae2eb5d58dfad7d5b504427ab5b6b6d0d26@45.33.102.106:26656
 ```
 
 Validators are encouraged to create a PR and add their nodes above.
