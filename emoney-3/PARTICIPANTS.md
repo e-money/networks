@@ -26,7 +26,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Figment
 * [ ] Forbole
 * [ ] HashQuark
-* [ ] InchainWorks
+* [x] InchainWorks
 * [ ] Inotel
 * [ ] IRISnet-Bianjie
 * [ ] iwval
