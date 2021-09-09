@@ -19,7 +19,8 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Cosmic Validator
 * [ ] Cosmostation
 * [ ] DCC CAPITAL
-* [ ] Dual Stacking
+* [x] Dual Stacking
+* [x] Dual Stacking Spare
 * [x] e-Money.com // validator.network
 * [ ] Easy 2 Stake
 * [x] EZStaking.io
