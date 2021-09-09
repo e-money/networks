@@ -2,7 +2,7 @@
 
 Please create a pull request (or send a PM to @mdyring on Telegram) to signal readiness for the upgrade:
 
-* [ ] 01node
+* [x] 01node
 * [ ] Ant Boy
 * [ ] Ant Man
 * [ ] ATEAM
