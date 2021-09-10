@@ -41,7 +41,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] MissionControl
 * [ ] Mr.K
 * [ ] MyCointainer
-* [ ] Newroad Network
+* [x] Newroad Network
 * [ ] Nodeasy.com
 * [ ] Northern stake
 * [ ] novy
