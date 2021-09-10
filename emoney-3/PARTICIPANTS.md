@@ -2,7 +2,7 @@
 
 Please create a pull request (or send a PM to @mdyring on Telegram) to signal readiness for the upgrade:
 
-* [ ] 01node
+* [x] 01node
 * [ ] Ant Boy
 * [ ] Ant Man
 * [ ] ATEAM
@@ -19,9 +19,10 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Cosmic Validator
 * [ ] Cosmostation
 * [ ] DCC CAPITAL
-* [ ] Dual Stacking
+* [x] Dual Stacking
+* [x] Dual Stacking Spare
 * [x] e-Money.com // validator.network
-* [ ] Easy 2 Stake
+* [x] Easy 2 Stake
 * [x] EZStaking.io
 * [ ] Figment
 * [ ] Forbole
@@ -52,7 +53,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] stake.systems
 * [ ] stake.zone
 * [ ] Stake5 Labs
-* [ ] StakerBot
+* [x] StakerBot
 * [ ] stakewolf
 * [ ] Stakin
 * [ ] syncnode
