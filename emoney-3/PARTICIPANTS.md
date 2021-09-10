@@ -36,7 +36,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] MANTRA DAO
 * [ ] Mars
 * [ ] melea
-* [ ] mete0r
+* [x] mete0r
 * [ ] mintonium
 * [x] MissionControl
 * [ ] Mr.K
