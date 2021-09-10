@@ -52,7 +52,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] stake.systems
 * [ ] stake.zone
 * [ ] Stake5 Labs
-* [ ] StakerBot
+* [x] StakerBot
 * [ ] stakewolf
 * [ ] Stakin
 * [ ] syncnode
