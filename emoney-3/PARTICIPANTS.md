@@ -50,7 +50,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] SG-1
 * [ ] Simply Staking
 * [x] SpaceBlock
-* [ ] stake.systems
+* [x] stake.systems
 * [ ] stake.zone
 * [ ] Stake5 Labs
 * [x] StakerBot
