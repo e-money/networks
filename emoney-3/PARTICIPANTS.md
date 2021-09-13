@@ -4,7 +4,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 
 * [x] 01node
 * [ ] Ant Boy
-* [ ] Ant Man
+* [x] Ant Man
 * [ ] ATEAM
 * [ ] B-Harvest
 * [ ] BasBlock
@@ -57,10 +57,10 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] stakewolf
 * [ ] Stakin
 * [ ] syncnode
-* [ ] Top Rank
+* [x] Top Rank
 * [ ] Ubik Capital
 * [x] WeStaking
-* [ ] Winter
+* [x] New Winter
 * [ ] Witval
 
 (please add your validator if missing)
