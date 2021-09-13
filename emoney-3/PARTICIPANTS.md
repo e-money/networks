@@ -13,7 +13,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Bliss Dynamics
 * [ ] Block Producer
 * [ ] BlockHunters
-* [ ] blockscape
+* [x] blockscape
 * [x] Cat Boss
 * [ ] ChainLayer
 * [ ] Cosmic Validator
