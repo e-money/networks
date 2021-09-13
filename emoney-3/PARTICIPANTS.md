@@ -31,7 +31,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Inotel
 * [ ] IRISnet-Bianjie
 * [ ] iwval
-* [ ] KalpaTech
+* [x] KalpaTech
 * [x] kytzu
 * [ ] MANTRA DAO
 * [ ] Mars
