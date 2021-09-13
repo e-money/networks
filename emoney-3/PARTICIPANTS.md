@@ -13,7 +13,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Bliss Dynamics
 * [ ] Block Producer
 * [ ] BlockHunters
-* [ ] blockscape
+* [x] blockscape
 * [x] Cat Boss
 * [ ] ChainLayer
 * [ ] Cosmic Validator
@@ -31,7 +31,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Inotel
 * [ ] IRISnet-Bianjie
 * [ ] iwval
-* [ ] KalpaTech
+* [x] KalpaTech
 * [x] kytzu
 * [ ] MANTRA DAO
 * [ ] Mars
@@ -44,7 +44,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] Newroad Network
 * [ ] Nodeasy.com
 * [ ] Northern stake
-* [ ] novy
+* [x] novy
 * [ ] Pandora
 * [x] retz80
 * [ ] SG-1
