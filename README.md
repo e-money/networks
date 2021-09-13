@@ -7,7 +7,7 @@ If you intend to run a validator, please join our [validator hangout group](http
 ## Upcoming Mainnet Upgrade
 
 Chain ID: [emoney-3](emoney-3/README.md)  
-When: 2021-09-15 at 13:00:00 UTC  
+When: 2021-09-20 at 13:00:00 UTC  
 
 ## Latest Mainnet
 

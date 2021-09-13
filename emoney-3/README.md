@@ -7,7 +7,7 @@ Below you'll find the instructions for upgrading from emoney-2.
 ## Preparing for the upgrade from emoney-2
 
 * Install em-ledger [v0.9.6](https://github.com/e-money/em-ledger/releases/tag/v0.9.6) binaries
-* Restart emd with `--halt-time 1631710800` to stop the emoney-2 chain on 2021-09-15 at 13:00:00 UTC
+* Restart emd with `--halt-time 1632142800` to stop the emoney-2 chain on 2021-09-20 at 13:00:00 UTC
 * Install Cosmovisor in preparation for future emoney-3 upgrades
 * Signal readiness in [PARTICIPANTS.md](PARTICIPANTS.md)
 
