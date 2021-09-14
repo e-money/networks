@@ -13,3 +13,6 @@ dc285e48fa59d38597880a2422a8c6e2a3b27fa2@3.68.159.237:30656
 ```
 
 Validators are encouraged to create a PR and add their nodes above.
+
+
+emd tx bank send lilmermaid-faucet <your-validator> "500000000ungm" --gas-prices "1.0ungm"
