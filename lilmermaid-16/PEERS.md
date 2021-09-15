@@ -13,7 +13,11 @@ dc285e48fa59d38597880a2422a8c6e2a3b27fa2@3.68.159.237:30656
 
 # Mr.K
 344a5fb9785b500ec93ed76496c3cfdf7ee7e85e@44.193.141.25:36656
+
+# Novy
+4801aabd8cb883a1e7751df49299335a4a5c0108@135.181.73.109:26656
 ```
+
 
 Validators are encouraged to create a PR and add their nodes above.
 
