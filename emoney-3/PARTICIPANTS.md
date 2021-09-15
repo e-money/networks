@@ -6,7 +6,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Ant Boy
 * [x] Ant Man
 * [ ] ATEAM
-* [ ] B-Harvest
+* [x] B-Harvest
 * [ ] BasBlock
 * [ ] Bi23 Labs
 * [ ] Bit Cat
