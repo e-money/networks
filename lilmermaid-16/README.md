@@ -19,7 +19,7 @@ Please provide participation proof by making a pull request with changes into th
 ## Task 1: Installation
 
 Check list:
-* [ ] Install [Cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor) and create the appropriate directory structure
+* [ ] Install [Cosmovisor v0.1.0*](https://github.com/cosmos/cosmos-sdk/releases/tag/cosmovisor%2Fv0.1.0) and create the appropriate directory structure
 * [ ] Use [UPGRADES.md](UPGRADES.md) to install the emd binaries in the appropriate location
 * [ ] Initialise software: `cosmovisor/genesin/bin/emd init...`
 * [ ] Copy the [genesis file](genesis.json) to `config/`
