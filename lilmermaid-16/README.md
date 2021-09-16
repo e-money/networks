@@ -21,7 +21,7 @@ Please provide participation proof by making a pull request with changes into th
 Check list:
 * [ ] Install [Cosmovisor v0.1.0*](https://github.com/cosmos/cosmos-sdk/releases/tag/cosmovisor%2Fv0.1.0) and create the appropriate directory structure
 * [ ] Use [UPGRADES.md](UPGRADES.md) to install the emd binaries in the appropriate location
-* [ ] Initialise software: `cosmovisor/genesin/bin/emd init...`
+* [ ] Initialise software: `cosmovisor/genesis/bin/emd init <yourmoniker>`
 * [ ] Copy the [genesis file](genesis.json) to `config/`
 * [ ] Configure [peers](PEERS.md) in `config/config.toml`
 * [ ] Run emd as a service using Cosmovisor with `--x-crisis-skip-assert-invariants`
