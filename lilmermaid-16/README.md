@@ -26,7 +26,7 @@ Check list:
 * [ ] Configure [peers](PEERS.md) in `config/config.toml`
 * [ ] Run emd as a service using Cosmovisor with `--x-crisis-skip-assert-invariants`
 
-\* Note: If validators would like to enable the auto-download option, they will need to use [Cosmovisor v0.1.0](https://docs.cosmos.network/master/run-node/cosmovisor.html#design). Later versions of Cosmovisor do not support Cosmos SDK v0.42 that em-ledger is based on when the auto-download option is enabled.]
+\* Note: If validators would like to enable the auto-download option, they will need to use [Cosmovisor v0.1.0](https://docs.cosmos.network/master/run-node/cosmovisor.html#design). Later versions of Cosmovisor do not support Cosmos SDK v0.42 that em-ledger is based on when the auto-download option is enabled.
 
 It is suggested to export the following Cosmosvisor environment variables:
 ```
