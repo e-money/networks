@@ -15,7 +15,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] BlockHunters
 * [x] blockscape
 * [x] Cat Boss
-* [ ] ChainLayer
+* [x] ChainLayer
 * [ ] Cosmic Validator
 * [ ] Cosmostation
 * [ ] DCC CAPITAL
