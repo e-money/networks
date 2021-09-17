@@ -2,26 +2,27 @@
 
 Please create a pull request (or send a PM to @mdyring on Telegram) to signal readiness for the upgrade:
 
-* [ ] 01node
+* [x] 01node
 * [ ] Ant Boy
-* [ ] Ant Man
+* [x] Ant Man
 * [ ] ATEAM
-* [ ] B-Harvest
+* [x] B-Harvest
 * [ ] BasBlock
 * [ ] Bi23 Labs
 * [ ] Bit Cat
 * [ ] Bliss Dynamics
 * [ ] Block Producer
 * [ ] BlockHunters
-* [ ] blockscape
+* [x] blockscape
 * [x] Cat Boss
 * [ ] ChainLayer
 * [ ] Cosmic Validator
 * [ ] Cosmostation
 * [ ] DCC CAPITAL
-* [ ] Dual Stacking
+* [x] Dual Stacking
+* [x] Dual Stacking Spare
 * [x] e-Money.com // validator.network
-* [ ] Easy 2 Stake
+* [x] Easy 2 Stake
 * [x] EZStaking.io
 * [ ] Figment
 * [ ] Forbole
@@ -30,36 +31,36 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Inotel
 * [ ] IRISnet-Bianjie
 * [ ] iwval
-* [ ] KalpaTech
-* [ ] kytzu
+* [x] KalpaTech
+* [x] kytzu
 * [ ] MANTRA DAO
 * [ ] Mars
 * [ ] melea
-* [ ] mete0r
+* [x] mete0r
 * [ ] mintonium
 * [x] MissionControl
 * [ ] Mr.K
 * [ ] MyCointainer
-* [ ] Newroad Network
+* [x] Newroad Network
 * [ ] Nodeasy.com
 * [ ] Northern stake
-* [ ] novy
+* [x] novy
 * [ ] Pandora
 * [x] retz80
 * [ ] SG-1
 * [ ] Simply Staking
 * [x] SpaceBlock
-* [ ] stake.systems
-* [ ] stake.zone
+* [x] stake.systems
+* [x] stake.zone
 * [ ] Stake5 Labs
-* [ ] StakerBot
+* [x] StakerBot
 * [ ] stakewolf
 * [ ] Stakin
 * [ ] syncnode
-* [ ] Top Rank
+* [x] Top Rank
 * [ ] Ubik Capital
 * [x] WeStaking
-* [ ] Winter
+* [x] New Winter
 * [ ] Witval
 
 (please add your validator if missing)
