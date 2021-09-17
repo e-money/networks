@@ -61,7 +61,7 @@ Try sending tokens to [osclone-1 chain](../osclone-1/README.md) using `emd tx ib
 
 Check list:
 * [ ] Await coordination of the upgrade in the [validator hangout group](https://t.me/joinchat/HBB5elfpWv8rADBFhhjbtg).
-* [ ] Install the [TBD]() binaries to `cosmovisor/upgrades/upgrade-test-1/binaries`
+* [ ] Use [UPGRADES.md](UPGRADES.md) to install the emd binaries in the appropriate location
 * [ ] Monitor the validator during the upgrade and confirm it successfully completed at the scheduled height.
 
 ## Task 8: Participate in the Mainnet Upgrade
