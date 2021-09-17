@@ -10,7 +10,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] BasBlock
 * [ ] Bi23 Labs
 * [ ] Bit Cat
-* [ ] Bliss Dynamics
+* [x] Bliss Dynamics
 * [ ] Block Producer
 * [ ] BlockHunters
 * [x] blockscape
