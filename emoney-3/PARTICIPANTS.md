@@ -29,7 +29,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] HashQuark
 * [x] InchainWorks
 * [ ] Inotel
-* [ ] IRISnet-Bianjie
+* [x] IRISnet-Bianjie
 * [ ] iwval
 * [x] KalpaTech
 * [x] kytzu
@@ -56,7 +56,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] StakerBot
 * [ ] stakewolf
 * [ ] Stakin
-* [ ] syncnode
+* [x] syncnode
 * [x] Top Rank
 * [ ] Ubik Capital
 * [x] WeStaking
