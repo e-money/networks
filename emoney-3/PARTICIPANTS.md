@@ -12,7 +12,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Bit Cat
 * [x] Bliss Dynamics
 * [ ] Block Producer
-* [ ] BlockHunters
+* [x] BlockHunters
 * [x] blockscape
 * [x] Cat Boss
 * [x] ChainLayer
