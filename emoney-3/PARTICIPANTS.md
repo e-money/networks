@@ -45,7 +45,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Nodeasy.com
 * [ ] Northern stake
 * [x] novy
-* [ ] Pandora
+* [x] Pandora
 * [x] retz80
 * [ ] SG-1
 * [x] Simply Staking
