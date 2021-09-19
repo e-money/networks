@@ -17,7 +17,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] Cat Boss
 * [x] ChainLayer
 * [ ] Cosmic Validator
-* [ ] Cosmostation
+* [x] Cosmostation
 * [ ] DCC CAPITAL
 * [x] Dual Stacking
 * [x] Dual Stacking Spare
