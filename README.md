@@ -4,20 +4,13 @@ This repository contains the official genesis file for current and historical [e
 
 If you intend to run a validator, please join our [validator hangout group](https://t.me/joinchat/HBB5elfpWv8rADBFhhjbtg).
 
-## Upcoming Mainnet Upgrade
+## Latest Mainnet
 
 When: 2021-09-20 at 13:00:00 UTC  
 Chain ID: [emoney-3](emoney-3/README.md)  
 Software: [UPGRADES.md](emoney-3/UPGRADES.md)  
-Genesis:  [TBA]()  
+Genesis:  [genesis.json](https://raw.githubusercontent.com/e-money/networks/master/emoney-3/genesis.json)  
 Peers: [PEERS.md](emoney-3/PEERS.md)  
-
-## Latest Mainnet
-
-Chain ID: [emoney-2](emoney-2/README.md)  
-Software: [v0.9.6](https://github.com/e-money/em-ledger/releases/tag/v0.9.6)  
-Genesis:  [genesis.json](https://raw.githubusercontent.com/e-money/networks/master/emoney-2/genesis.json)  
-Peers: [PEERS.md](emoney-2/PEERS.md)
 
 ## Latest Testnet
 
