@@ -55,7 +55,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Stake5 Labs
 * [x] StakerBot
 * [x] stakewolf
-* [ ] Stakin
+* [x] Stakin
 * [x] syncnode
 * [x] Top Rank
 * [x] Ubik Capital
