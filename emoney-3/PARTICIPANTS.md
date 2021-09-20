@@ -35,7 +35,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] kytzu
 * [ ] MANTRA DAO
 * [ ] Mars
-* [ ] melea
+* [x] melea
 * [x] mete0r
 * [ ] mintonium
 * [x] MissionControl
@@ -54,7 +54,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [x] stake.zone
 * [ ] Stake5 Labs
 * [x] StakerBot
-* [ ] stakewolf
+* [x] stakewolf
 * [ ] Stakin
 * [x] syncnode
 * [x] Top Rank
