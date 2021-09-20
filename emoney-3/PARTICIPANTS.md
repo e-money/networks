@@ -33,7 +33,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] iwval
 * [x] KalpaTech
 * [x] kytzu
-* [ ] MANTRA DAO
+* [x] MANTRA DAO
 * [ ] Mars
 * [x] melea
 * [x] mete0r
