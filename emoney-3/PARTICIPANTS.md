@@ -58,7 +58,7 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Stakin
 * [x] syncnode
 * [x] Top Rank
-* [ ] Ubik Capital
+* [x] Ubik Capital
 * [x] WeStaking
 * [x] New Winter
 * [x] Witval
