@@ -27,4 +27,6 @@ Below you'll find the instructions for participating in the upgrade from emoney-
 
 Since emcli is deprecated the default location of the **file based keyring** has changed as well.
 
-You'll need to copy your keyring from ~/.emcli to ~/.emd, e.g. `cp -vR ~/.emcli/keyring-e-money/ ~/.emd/keyring-file`
+You'll need to export wraped key from your keyring: `emcli keys export "key-name" > file-key.wrap` 
+
+and import with emd (v1.1.0) : `emd keys import "key-name" file-key.wrap`
