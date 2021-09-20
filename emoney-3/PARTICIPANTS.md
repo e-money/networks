@@ -61,6 +61,6 @@ Please create a pull request (or send a PM to @mdyring on Telegram) to signal re
 * [ ] Ubik Capital
 * [x] WeStaking
 * [x] New Winter
-* [ ] Witval
+* [x] Witval
 
 (please add your validator if missing)
