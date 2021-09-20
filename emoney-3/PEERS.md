@@ -27,6 +27,9 @@ eed66085c975189e3d498fe61af2fcfb3da34924@217.79.184.40:26656
 
 # KalpaTech
 170255a4a9b120786d2d6c3931ebf0125087cca0@62.171.171.139:26656
+
+# Inotel
+d12ac664ff9766e0535c836173111e3eed462e79@185.144.83.157:26656
 ```
 
 Validators are encouraged to create a pull request to add their nodes to the above.
