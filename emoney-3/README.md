@@ -18,6 +18,7 @@ Below you'll find the instructions for participating in the upgrade from emoney-
 * Run `emd export --home <emoney-home> --for-zero-height > emoney-2.export.json`
 * Install em-ledger [v1.1.0](https://github.com/e-money/em-ledger/releases/tag/v1.1.0)
 * Run `emd migrate v0.9 emoney-2.export.json --chain-id emoney-3 > genesis.json`
+* Run `jq -S -c -M '' genesis.json | shasum -a 256`
 
 ## Optional: Update git reposority
 * Finally commit new genesis using `git add -f emoney-2.export.json genesis.json && git commit -m "Add emoney-3 genesis"`
