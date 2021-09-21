@@ -6,7 +6,6 @@ If you intend to run a validator, please join our [validator hangout group](http
 
 ## Latest Mainnet
 
-When: 2021-09-20 at 13:00:00 UTC  
 Chain ID: [emoney-3](emoney-3/README.md)  
 Software: [UPGRADES.md](emoney-3/UPGRADES.md)  
 Genesis:  [genesis.json](https://raw.githubusercontent.com/e-money/networks/master/emoney-3/genesis.json)  
