@@ -1,6 +1,6 @@
 # emoney-3 Mainnet
 
-This directory contains the official [genesis.json](genesis.json) file for the emoney-3 mainnet.
+This directory contains the official [genesis.json](https://github.com/e-money/networks/raw/master/emoney-3/genesis.json) file for the emoney-3 mainnet.
 
 Below you'll find the instructions for participating in the upgrade from emoney-2.
 
