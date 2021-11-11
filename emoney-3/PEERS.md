@@ -30,6 +30,9 @@ eed66085c975189e3d498fe61af2fcfb3da34924@217.79.184.40:26656
 
 # Inotel
 d12ac664ff9766e0535c836173111e3eed462e79@185.144.83.157:26656
+
+# DKLABCO
+bdb22f49b4783c4582ad7f38477dfa3073644ed9@52.221.208.199:36656
 ```
 
 Validators are encouraged to create a pull request to add their nodes to the above.
