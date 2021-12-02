@@ -9,6 +9,7 @@ If you intend to run a validator, please join our [validator hangout group](http
 Chain ID: [emoney-3](emoney-3/README.md)  
 Software: [UPGRADES.md](emoney-3/UPGRADES.md)  
 Genesis:  [genesis.json](https://raw.githubusercontent.com/e-money/networks/master/emoney-3/genesis.json)  
+Seeds: [SEEDS.md](emoney-3/SEEDS.md)  
 Peers: [PEERS.md](emoney-3/PEERS.md)  
 
 ## Latest Testnet

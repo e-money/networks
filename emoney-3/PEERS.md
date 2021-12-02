@@ -1,10 +1,6 @@
 # Persistent Peers
 
 ```
-# validator.network
-6420ef5087accdff4a87df5331d07da5de568743@18.194.208.47:28656
-f49bf0e3d6d6057499ceb6613854af37a3da532a@3.121.126.177:28656
-
 # easy2stake
 ecec8933d80da5fccda6bdd72befe7e064279fc1@207.180.213.123:26676
 
