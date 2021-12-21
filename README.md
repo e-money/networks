@@ -12,9 +12,14 @@ Genesis:  [genesis.json](https://raw.githubusercontent.com/e-money/networks/mast
 Seeds: [SEEDS.md](emoney-3/SEEDS.md)  
 Peers: [PEERS.md](emoney-3/PEERS.md)  
 
+## Previous Mainnets and snapshots
+
+https://quicksync.io/networks/emoney.html
+
 ## Latest Testnet
 
 Chain ID: [lilmermaid-16](lilmermaid-16/README.md)  
 Software: [UPGRADES.md](lilmermaid-16/UPGRADES.md)  
 Genesis:  [genesis.json](https://raw.githubusercontent.com/e-money/networks/master/lilmermaid-16/genesis.json)  
 Peers: [PEERS.md](lilmermaid-16/PEERS.md)  
+
