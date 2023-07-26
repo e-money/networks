@@ -12,9 +12,10 @@ Genesis:  [genesis.json](https://raw.githubusercontent.com/e-money/networks/mast
 Seeds: [SEEDS.md](emoney-3/SEEDS.md)  
 Peers: [PEERS.md](emoney-3/PEERS.md)  
 
-## Previous Mainnets and snapshots
+## Snapshots Services
 
-https://quicksync.io/networks/emoney.html
+https://quicksync.io/networks/emoney.html  
+https://snapshot.validator.network/  
 
 ## Latest Testnet
 
